@@ -12,6 +12,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -117,7 +118,7 @@ header nav ul li a {
 }
 
 .info {
-  padding: 150px 200px;
+  padding: 0 200px;
   background-color: var(--primary-color);
   text-align: center;
   color: var(--light-color);
@@ -129,5 +130,54 @@ header nav ul li a {
 }
 
 .info-container .item {
+  margin-top: 75px;
   padding: 15px;
+  width: 400px;
+  height: 300px;
+}
+
+.info-container .item h2 {
+  font-size: 32px;
+  line-height: 0.5;
+  font-weight: 500;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 200px;
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.f-list h2 {
+  font-size: 18px;
+  line-height: 0.5;
+}
+.f-list p {
+  font-size: 14px;
+}
+
+.features.more {
+  padding: 50px 200px 50px 100px;
+}
+
+.f-text {
+  width: 500px;
+  padding-top: 200px;
+  line-height: 1;
+}
+
+.f-text a {
+  text-decoration: none;
+  color: var(--primary-color);
+  line-height: 5;
+}
+
+.f-text a:hover {
+  color: var(--dark-color);
 }
