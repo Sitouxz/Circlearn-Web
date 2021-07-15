@@ -20,6 +20,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* @media only screen and (min-width: 1920px) {
+} */
+
 header {
   display: flex;
   padding: 15px 200px;
@@ -77,6 +80,15 @@ header nav ul li a {
   margin: 0 15px;
 }
 
+.vector {
+  pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  line-height: 0;
+}
+
 .vector .img1 {
   position: absolute;
   top: 0;
@@ -105,16 +117,13 @@ header nav ul li a {
 }
 
 .title {
-  padding: 200px 200px 300px;
+  padding: 235px 200px 300px;
 }
 
-.title h1 {
-  font-size: 64px;
-  color: var(--dark-color);
-}
 .title p {
   color: var(--dark-color);
-  padding: 0 0 50px;
+  padding: 50px 0 50px;
+  font-size: 18px;
 }
 
 .info {
@@ -180,4 +189,21 @@ header nav ul li a {
 
 .f-text a:hover {
   color: var(--dark-color);
+}
+
+.cta .bg {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: -1;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 73px;
+}
+
+.cta-text h2 {
+  color: var(--light-color);
 }
