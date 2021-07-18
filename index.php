@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
@@ -64,32 +65,7 @@ With Productive Community of Students."
     />
   </head>
   <body>
-    <header class="topnav">
-      <a href="index.html"><img src="./assets/img/Logo.svg" alt="logo" /></a>
-      <nav>
-        <ul id="myLinks">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
-      <div class="button">
-        <a href="./pages/login.html" class="login">Login</a>
-        <a href="./pages/login.html" class="sign-up">Sign Up</a>
-      </div>
-      <a
-        href="javascript:void(0);"
-        class="icon bar-container"
-        onclick="myFunction();
-        xfunction(this)
-        "
-      >
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </a>
-    </header>
+  <?php include_once 'header.php'?>
     <div class="hero">
       <div class="vector">
         <img class="img1" src="./assets/img/Hero-illustration.svg" alt="" />
