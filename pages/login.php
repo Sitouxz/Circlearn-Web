@@ -40,7 +40,6 @@
         <button type="submit" class="submit" name="submit">Log-in</button>
         <p class="forgot-pass">Forgot Password ?</p>
       </form>
-
       <div class="sub-cont">
         <div class="img">
           <div class="img-text m-up">

@@ -63,28 +63,7 @@ With Productive Community of Students."
     />
   </head>
   <body>
-    <header>
-      <div class="left">
-        <img src="../assets/img/Hero-logo.svg" alt="Logo" />
-        <nav>
-          <ul>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Menu</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="right">
-        <button>Button</button>
-        <div class="user">
-          <p>Jokowi</p>
-          <img src="../assets/img/User-avatar.png" alt="User" />
-        </div>
-        <a href="#">
-          <img src="../assets/img/Exit.svg" alt="" />
-        </a>
-      </div>
-    </header>
+  <?php include_once 'header.php'?>
     <section>
       <div class="card-container">
         <h1>ROOMS</h1>
