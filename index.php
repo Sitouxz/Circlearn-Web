@@ -88,7 +88,7 @@ With Productive Community of Students."
           with productive COmmunity of students.
         </p>
         <div class="get-started">
-          <a href="./pages/login.html">Get Started</a>
+          <a href="./pages/login.php">Get Started</a>
         </div>
       </div>
     </div>
@@ -174,7 +174,7 @@ With Productive Community of Students."
           subjects that can be easily choose acocording to <br />
           your interests
         </p>
-        <a href="./pages/login.html"
+        <a href="./pages/login.php"
           >Get Started <img src="./assets/img/Features-arrow.svg" alt=""
         /></a>
       </div>
@@ -189,7 +189,7 @@ With Productive Community of Students."
           discuss with you according to the subject you <br />
           choose
         </p>
-        <a href="./pages/login.html"
+        <a href="./pages/login.php"
           >Get Started <img src="./assets/img/Features-arrow.svg" alt=""
         /></a>
       </div>

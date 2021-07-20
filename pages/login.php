@@ -66,16 +66,10 @@
         </div>
         <form class="form sign-up" action="../assets/include/signup.inc.php" method="post">
           <h2>Sign Up</h2>
-          <div class="name">
             <label>
               <span>First name</span>
               <input type="text" name="fname"/>
             </label>
-            <label>
-              <span>Last name</span>
-              <input type="text" name="lname"/>
-            </label>
-          </div>
           <label>
             <span>Email</span>
             <input type="email" name="email"/>
@@ -86,14 +80,6 @@
               <input type="radio" name="gender" /> Male
               <input type="radio" name="gender" /> Female
             </div>
-          </label>
-          <label>
-            <span>Phone Number</span>
-            <input type="tel" />
-          </label>
-          <label>
-            <span>Address</span>
-            <input type="text" />
           </label>
           <div class="password">
             <label>
