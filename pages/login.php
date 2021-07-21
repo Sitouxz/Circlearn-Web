@@ -18,7 +18,7 @@
         <h2>Sign In</h2>
         <label>
           <span>Email</span>
-          <input type="email" name="email" />
+          <input type="text" name="email" />
         </label>
         <label>
           <span>Password</span>
