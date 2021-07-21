@@ -67,6 +67,9 @@ With Productive Community of Students."
     />
   </head>
   <body>
+<<<<<<< HEAD:pages/mainPage.php
+  <?php include_once 'header.php'?>
+=======
     <header>
       <div class="left">
         <img src="../assets/img/Hero-logo.svg" alt="Logo" />
@@ -101,6 +104,7 @@ With Productive Community of Students."
         </a>
       </div>
     </header>
+>>>>>>> origin/fixing:pages/mainPage.html
     <section>
       <div class="card-container">
         <h1>ROOMS</h1>

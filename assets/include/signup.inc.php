@@ -2,8 +2,7 @@
 
  if (isset($_POST["submit"])) {
 
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $repwd = $_POST["repwd"];
@@ -11,8 +10,12 @@
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if (emptyInputSignup($fname,$lname,$email,$pwd,$repwd) !== false ) {
+    if (emptyInputSignup($username,$email,$pwd,$repwd) !== false ) {
         header("location: ../../pages/login.php?error=emptyinput");
+        exit();
+    }
+    if (invalidUid($email) !== false ) {
+        header("location: ../../pages/login.php?error=invalidusername");
         exit();
     }
     if (invalidEmail($email) !== false ) {
@@ -23,12 +26,12 @@
         header("location: ../../pages/login.php?error=pwdnotmatch");
         exit();
     }
-    if (emailExist($conn,$email) !== false ) {
+    if (uidExists($conn,$email,$username) !== false ) {
         header("location: ../../pages/login.php?error=emailtaken");
         exit();
     }
 
-    createUser($conn, $fname, $lname, $email, $pwd, $repwd);
+    createUser($conn, $username, $email, $pwd);
     loginUser($conn, $email, $pwd);
 }
 else{

@@ -65,7 +65,46 @@ With Productive Community of Students."
     />
   </head>
   <body>
-  <?php include_once 'header.php'?>
+  <header class="topnav">
+      <a href="index.php"><img src="./assets/img/Logo.svg" alt="logo" /></a>
+      <nav>
+        <ul id="myLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <?php
+                if (isset($_SESSION["nick"])) {
+                    echo "
+                    <h3>".$_SESSION["nick"]." - Login successfully</h3>
+                    ";
+                    echo "
+                    <a href=\"assets/include/logout.inc.php\">Log-out</a>
+                    ";
+                }
+                else{
+                    echo "
+                    <div class=\"button\">
+                        <a href=\"./pages/login.php\" class=\"login\">Login</a>
+                        <a href=\"./pages/login.php\" class=\"sign-up\">Sign Up</a>
+                    </div>
+                    ";
+                }
+        ?>
+      <a
+        href="javascript:void(0);"
+        class="icon bar-container"
+        onclick="myFunction();
+        xfunction(this)
+        "
+      >
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </a>
+    </header>
     <div class="hero">
       <div class="vector">
         <img class="img1" src="./assets/img/Hero-illustration.svg" alt="" />
