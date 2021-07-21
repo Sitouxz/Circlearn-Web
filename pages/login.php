@@ -67,7 +67,7 @@
         <form class="form sign-up" action="../assets/include/signup.inc.php" method="post">
           <h2>Sign Up</h2>
             <label>
-              <span>First name</span>
+              <span>Username</span>
               <input type="text" name="fname"/>
             </label>
           <label>

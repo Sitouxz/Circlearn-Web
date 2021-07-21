@@ -23,7 +23,7 @@
                 else{
                     echo "
                     <div class=\"button\">
-                        <a href=\"./pages/login.php\" class=\"login\">Login / Sign up</a>
+                        <a href=\"./pages/login.php\" class=\"login\">Join Us!</a>
                     </div>
                     ";
                 }
