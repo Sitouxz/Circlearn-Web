@@ -42,7 +42,7 @@ function uidExists($conn, $email, $username){
     $sql = "SELECT * FROM users WHERE userEmail = ? OR userName = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../../pages/login.php?error=stmtfailed");
+        header("location: ../../pages/login.php?error=stmtfailedd");
         exit();
     }
 

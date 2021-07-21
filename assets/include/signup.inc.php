@@ -14,7 +14,7 @@
         header("location: ../../pages/login.php?error=emptyinput");
         exit();
     }
-    if (invalidUid($email) !== false ) {
+    if (invalidUid($username) !== false ) {
         header("location: ../../pages/login.php?error=invalidusername");
         exit();
     }
