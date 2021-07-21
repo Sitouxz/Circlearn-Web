@@ -67,12 +67,8 @@
           <h2>Sign Up</h2>
           <div class="name">
             <label>
-              <span>First name</span>
-              <input type="text" name="fname"/>
-            </label>
-            <label>
-              <span>Last name</span>
-              <input type="text" name="lname"/>
+              <span>Username</span>
+              <input type="text" name="username"/>
             </label>
           </div>
           <label>

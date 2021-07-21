@@ -2,7 +2,7 @@
 
  if (isset($_POST["submit"])) {
 
-    $username = $_POST["nickname"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $repwd = $_POST["repwd"];

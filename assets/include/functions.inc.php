@@ -11,8 +11,8 @@ function emptyInputSignup($username,$email,$pwd,$repwd){
 
     return $result;
 }
-function invalidUid($email){
-    if (!preg_match("/^[a-zA-Z0-9]*$/"), $username) {
+function invalidUid($username){
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
     }
     else {
@@ -38,7 +38,7 @@ function pwdMatch($pwd,$repwd){
     }
     return $result;
 }
-function uidExists($conn, $email,$username){
+function uidExists($conn, $email, $username){
     $sql = "SELECT * FROM users WHERE userEmail = ? OR nickname = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -86,8 +86,8 @@ function emptyInputLogin($email,$pwd){
 
     return $result;
 }
-function loginUser($conn, $email, $pwd){
-    $uidExists = emailExist($conn, $email);
+function loginUser($conn, $username, $pwd){
+    $uidExists = uidExists($conn, $username, $username);
 
     if($uidExists === false){
         header("location: ../../pages/login.php?error=wronglogin");
@@ -104,9 +104,7 @@ function loginUser($conn, $email, $pwd){
     else if($checkPwd === true){
         session_start();
         $_SESSION["userid"] = $uidExists["userId"];
-        $_SESSION["fname"] = $uidExists["firstName"];
-        $_SESSION["lname"] = $uidExists["lastName"];
-        $_SESSION["nick"] = $uidExists["nickname"];
+        $_SESSION["nick"] = $uidExists["userName"];
         $_SESSION["email"] = $uidExists["userEmail"];
         header("location: ../../pages/mainPage.php");
         exit();

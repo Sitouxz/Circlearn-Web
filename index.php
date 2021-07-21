@@ -76,9 +76,9 @@ With Productive Community of Students."
         </ul>
       </nav>
       <?php
-                if (isset($_SESSION["fname"])) {
+                if (isset($_SESSION["nick"])) {
                     echo "
-                    <h3>".$_SESSION["fname"]." - Login successfully</h3>
+                    <h3>".$_SESSION["nick"]." - Login successfully</h3>
                     ";
                     echo "
                     <a href=\"assets/include/logout.inc.php\">Log-out</a>
