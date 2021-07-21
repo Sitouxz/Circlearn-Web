@@ -1,7 +1,7 @@
 <?php
 
-function emptyInputSignup($fname,$lname,$email,$pwd,$repwd){
-    if (empty($fname) || empty($lname) || empty($email) || empty($pwd)|| empty($repwd)){
+function emptyInputSignup($username,$email,$pwd,$repwd){
+    if (empty($username) || empty($email) || empty($pwd)|| empty($repwd)){
         $result = true;
     }
     else {
@@ -11,7 +11,15 @@ function emptyInputSignup($fname,$lname,$email,$pwd,$repwd){
 
     return $result;
 }
-
+function invalidUid($username){
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
 function invalidEmail($email){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
@@ -30,15 +38,15 @@ function pwdMatch($pwd,$repwd){
     }
     return $result;
 }
-function emailExist($conn, $email){
-    $sql = "SELECT * FROM users WHERE userEmail = ?;";
+function uidExists($conn, $email, $username){
+    $sql = "SELECT * FROM users WHERE userEmail = ? OR userName = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../sign-up.php?error=stmtfailed");
+        header("location: ../../pages/login.php?error=stmtfailed");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $username);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
@@ -54,20 +62,18 @@ function emailExist($conn, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $fname, $lname, $email, $pwd){
-    $sql = "INSERT INTO users (firstName,lastName,userEmail,userPwd) VALUES (?, ?, ?, ?);";
+function createUser($conn, $username, $email, $pwd){
+    $sql = "INSERT INTO users (userName,userEmail,userPwd) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../sign-up.php?error=stmtfailed");
+        header("location: ../../pages/login.php?error=stmtfailed");
         exit();
     }
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "ssss", $fname, $lname, $email, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../sign-up.php?error=none");
-        exit();
 }
 function emptyInputLogin($email,$pwd){
     if (empty($email) || empty($pwd)){
@@ -80,30 +86,27 @@ function emptyInputLogin($email,$pwd){
 
     return $result;
 }
-function loginUser($conn, $email, $pwd){
-    $emailExists = emailExist($conn, $email);
+function loginUser($conn, $username, $pwd){
+    $uidExists = uidExists($conn, $username, $username);
 
-    if($emailExists === false){
-        header("location: ../log-in.php?error=wronglogin");
+    if($uidExists === false){
+        header("location: ../../pages/login.php?error=wronglogin");
         exit();
     }
 
-    $pwdHashed = $emailExists["userPwd"];
+    $pwdHashed = $uidExists["userPwd"];
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../log-in.php?error=wronglogin");
+        header("location: ../../pages/login.php?error=wronglogin");
         exit();
     }
     else if($checkPwd === true){
         session_start();
-        $_SESSION["userid"] = $emailExists["userId"];
-        $_SESSION["fname"] = $emailExists["firstName"];
-        $_SESSION["lname"] = $emailExists["lastName"];
-        $_SESSION["email"] = $emailExists["userEmail"];
-        echo $_SESSION["akhir"];
-        header("location: ../index.php");
-        echo $_SESSION["akhir"];
+        $_SESSION["userid"] = $uidExists["userId"];
+        $_SESSION["nick"] = $uidExists["userName"];
+        $_SESSION["email"] = $uidExists["userEmail"];
+        header("location: ../../pages/mainPage.php");
         exit();
     }
 }
