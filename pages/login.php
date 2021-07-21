@@ -17,8 +17,8 @@
       <form class="form sign-in" action="../assets/include/login.inc.php" method="post">
         <h2>Sign In</h2>
         <label>
-          <span>Email</span>
-          <input type="email" name="email" />
+          <span>Username/Email</span>
+          <input type="text" name="email" />
         </label>
         <label>
           <span>Password</span>
@@ -67,8 +67,8 @@
         <form class="form sign-up" action="../assets/include/signup.inc.php" method="post">
           <h2>Sign Up</h2>
             <label>
-              <span>First name</span>
-              <input type="text" name="fname"/>
+              <span>Username</span>
+              <input type="text" name="username"/>
             </label>
           <label>
             <span>Email</span>
