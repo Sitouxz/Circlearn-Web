@@ -12,27 +12,26 @@
     require_once 'functions.inc.php';
 
     if (emptyInputSignup($fname,$lname,$email,$pwd,$repwd) !== false ) {
-        header("location: ../../pages/login.php?error=emptyinput");
+        header("location: ../sign-up.php?error=emptyinput");
         exit();
     }
     if (invalidEmail($email) !== false ) {
-        header("location: ../../pages/login.php?error=invalidemail");
+        header("location: ../sign-up.php?error=invalidemail");
         exit();
     }
     if (pwdMatch($pwd,$repwd) !== false ) {
-        header("location: ../../pages/login.php?error=pwdnotmatch");
+        header("location: ../sign-up.php?error=pwdnotmatch");
         exit();
     }
     if (emailExist($conn,$email) !== false ) {
-        header("location: ../../pages/login.php?error=emailtaken");
+        header("location: ../sign-up.php?error=emailtaken");
         exit();
     }
 
     createUser($conn, $fname, $lname, $email, $pwd, $repwd);
-    loginUser($conn, $email, $pwd);
 }
 else{
-    header("location: ../../pages/login.php");
+    header("location: ../sign-up.php");
     exit();
 }
 ?>

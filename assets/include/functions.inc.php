@@ -34,7 +34,7 @@ function emailExist($conn, $email){
     $sql = "SELECT * FROM users WHERE userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../../pages/login.php?error=stmtfailed");
+        header("location: ../sign-up.php?error=stmtfailed");
         exit();
     }
 
@@ -58,7 +58,7 @@ function createUser($conn, $fname, $lname, $email, $pwd){
     $sql = "INSERT INTO users (firstName,lastName,userEmail,userPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../../pages/login.php?error=stmtfailed");
+        header("location: ../sign-up.php?error=stmtfailed");
         exit();
     }
 
@@ -66,6 +66,8 @@ function createUser($conn, $fname, $lname, $email, $pwd){
     mysqli_stmt_bind_param($stmt, "ssss", $fname, $lname, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    header("location: ../sign-up.php?error=none");
+        exit();
 }
 function emptyInputLogin($email,$pwd){
     if (empty($email) || empty($pwd)){
@@ -82,7 +84,7 @@ function loginUser($conn, $email, $pwd){
     $emailExists = emailExist($conn, $email);
 
     if($emailExists === false){
-        header("location: ../../pages/login.php?error=wronglogin");
+        header("location: ../log-in.php?error=wronglogin");
         exit();
     }
 
@@ -90,7 +92,7 @@ function loginUser($conn, $email, $pwd){
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../../pages/login.php?error=wronglogin");
+        header("location: ../log-in.php?error=wronglogin");
         exit();
     }
     else if($checkPwd === true){
@@ -99,7 +101,9 @@ function loginUser($conn, $email, $pwd){
         $_SESSION["fname"] = $emailExists["firstName"];
         $_SESSION["lname"] = $emailExists["lastName"];
         $_SESSION["email"] = $emailExists["userEmail"];
-        header("location: ../../index.php");
+        echo $_SESSION["akhir"];
+        header("location: ../index.php");
+        echo $_SESSION["akhir"];
         exit();
     }
 }
