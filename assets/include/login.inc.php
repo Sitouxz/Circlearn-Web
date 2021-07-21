@@ -1,4 +1,5 @@
 <?php 
+header("location: ../log-in.php?error=emptyinput");
  if (isset($_POST["submit"])) {
 
     $email = $_POST["email"];
@@ -8,7 +9,7 @@
     require_once 'functions.inc.php';
 
     if (emptyInputLogin($email, $pwd) !== false ) {
-        header("location: ../../pages/login.php?error=emptyinput");
+        header("location: ../log-in.php?error=emptyinput");
         exit();
     }
 
@@ -16,6 +17,6 @@
 
 }
 else{
-    header("location: ../../pages/login.php");
+    header("location: ../log-in.php");
     exit();
 }
