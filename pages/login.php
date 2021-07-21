@@ -65,12 +65,17 @@
         </div>
         <form class="form sign-up" action="../assets/include/signup.inc.php" method="post">
           <h2>Sign Up</h2>
-          <div class="name">
             <label>
+<<<<<<< HEAD
               <span>Username</span>
               <input type="text" name="username"/>
             </label>
           </div>
+=======
+              <span>First name</span>
+              <input type="text" name="fname"/>
+            </label>
+>>>>>>> origin/fixing
           <label>
             <span>Email</span>
             <input type="email" name="email"/>
@@ -81,14 +86,6 @@
               <input type="radio" name="gender" /> Male
               <input type="radio" name="gender" /> Female
             </div>
-          </label>
-          <label>
-            <span>Phone Number</span>
-            <input type="tel" />
-          </label>
-          <label>
-            <span>Address</span>
-            <input type="text" />
           </label>
           <div class="password">
             <label>
