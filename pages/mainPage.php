@@ -121,22 +121,18 @@ With Productive Community of Students."
       <div class="card-container">
         <h1>ROOMS</h1>
         <div class="grid">
-          <article>
-            <div class="img-container">
-              <p>#01 | Jokowi</p>
-            </div>
-            <div class="text">
-              <h3>Name</h3>
-              <p>Lorem Ipsum</p>
-              <h3>Subject</h3>
-              <p>Lorem Ipsum</p>
-              <h3>description</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              </p>
-              <button>Join!</button>
-            </div>
-          </article>
+
+
+
+
+          
+          <?php include 'room.php'?>
+
+
+
+
+
+
           <article>
             <div class="img-container">
               <p>#01 | Jokowi</p>
