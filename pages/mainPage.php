@@ -89,10 +89,14 @@ With Productive Community of Students."
       <div class="right">
         <button>Create Room</button>
         <div class="user">
-          <p>Jokowi</p>
+          <?php
+          echo "
+          <p>".$_SESSION["nick"]."</p>
+          ";
+          ?>
           <img src="../assets/img/User-avatar.png" alt="User" />
         </div>
-        <a href="#">
+        <a href="../assets/include/logout.inc.php">
           <img src="../assets/img/Exit.svg" alt="" />
         </a>
       </div>
