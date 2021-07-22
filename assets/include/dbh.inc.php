@@ -3,7 +3,7 @@
 $serverName = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
-$dBName = "webproject";
+$dBName = "circlearn";
 
 $conn = mysqli_connect($serverName,$dBUsername,$dBPassword,$dBName);
 
