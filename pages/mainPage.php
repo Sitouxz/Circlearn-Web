@@ -47,7 +47,7 @@
                     count: count
                 })
             })
-            $(".searchButton").click(function(){
+            $(".searchTerm").keyup(function(){
                 var searchRoom = $("#search").val();
                 $.post("room/search-room.php",{
                     search: searchRoom
@@ -79,7 +79,9 @@
         <div class="card-container">
             <h1>ROOMS</h1>
             <div class="grid" id="room">
-              <?php include 'room/room.php'?>
+            <?php   
+              include 'room/default-room.php';
+            ?>
             </div>
             <button style="justify-content: center; margin-top: 30px;" id="show_more">Show more!</button>
         </div>
