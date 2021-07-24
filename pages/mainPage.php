@@ -47,6 +47,14 @@
                     count: count
                 })
             })
+            $(".searchButton").click(function(){
+                var searchRoom = $("#search").val();
+                $.post("room/search-room.php",{
+                    search: searchRoom
+                }, function(data, status){
+                    $("#room").html(data)
+                });
+            })
         })
     </script>
   </head>
@@ -66,6 +74,7 @@
             <li class="log-out-link"><a href="#">log out</a></li>
         </ul>
     </div>
+    
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
@@ -74,7 +83,6 @@
             </div>
             <button style="justify-content: center; margin-top: 30px;" id="show_more">Show more!</button>
         </div>
-        
     </section>
     <div class="footer">
         <div class="footer-container">
