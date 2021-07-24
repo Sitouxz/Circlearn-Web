@@ -1,5 +1,5 @@
 <?php
-require_once '../assets/include/dbh.inc.php';
+require_once '../../assets/include/dbh.inc.php';
 
     $count = $_POST['count'];
     $sql = "SELECT * FROM room LIMIT $count;";

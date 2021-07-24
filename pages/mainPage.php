@@ -43,7 +43,7 @@
             var count = 4;
             $("#show_more").click(function(){
                 count = count+4;
-                $("#room").load("more-room.php", {
+                $("#room").load("room/more-room.php", {
                     count: count
                 })
             })
@@ -70,7 +70,7 @@
         <div class="card-container">
             <h1>ROOMS</h1>
             <div class="grid" id="room">
-              <?php include 'room.php'?>
+              <?php include 'room/room.php'?>
             </div>
             <button style="justify-content: center; margin-top: 30px;" id="show_more">Show more!</button>
         </div>
