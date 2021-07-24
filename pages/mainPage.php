@@ -53,6 +53,7 @@
                     search: searchRoom
                 }, function(data, status){
                     $("#room").html(data)
+                    $('#show_more').hide();
                 });
             })
         })

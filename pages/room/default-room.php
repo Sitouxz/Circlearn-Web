@@ -11,3 +11,9 @@
         echo "<h2>Empty!</h2>";
     }
 ?>
+<script>
+        $(document).ready(function(){
+            $('#show_more').show();
+        })
+</script>
+            
