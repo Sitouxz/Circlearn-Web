@@ -178,9 +178,20 @@ hr {
   align-items: center;
 }
 
-.user img {
-  height: 32px;
-  margin-left: 15px;
+.user button {
+  border: none;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 5px 15px;
+}
+
+.user button:hover {
+    background-color: #f1f1f1;
 }
 
 @media (max-width: 1150px) {
@@ -304,6 +315,8 @@ hr {
   line-height: 0.1;
   margin-bottom: 0;
 }
+
+
 
 .profile-picture {
   background-image: url("../img/profile-picture.png");

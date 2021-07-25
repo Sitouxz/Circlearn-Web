@@ -34,7 +34,7 @@
     <meta name="twitter:image" content="./assets/img/Hero-logo.svg" />
     <title>Create Room | Circlearn</title>
     <link rel="shortcut icon" href="../../assets/img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../../assets/css/createRoom.css" />
+    <link rel="stylesheet" href="../../assets/css/manageRoom.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
@@ -83,36 +83,63 @@
             <li class="log-out-link"><a href="#">log out</a></li>
         </ul>
     </div>
-
     <div class="content-header">
         <ul>
-            <li class="active"><a href="#">Create Room</a></li>
-            <li><a href="#">Manage Room</a></li>
+            <li><a href="#">Create Room</a></li>
+            <li class="active"><a href="#">Manage Room</a></li>
         </ul>
     </div>
 
     <div class="croom-container">
-        <div class="cbanner">
-            <div class="banner"></div>
-            <button>Change Banner</button>
-        </div>
-
-        <div class="room-info-container">
-            <div class="room-info">
-                <label>
-                    <span>Room name</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Room Subject</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Room Description</span>
-                    <textarea name="" id="" cols="50" rows="10"></textarea>
-                </label>
+        <div class="card">
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
             </div>
-            <button>Create</button>
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
+            </div>
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
+            </div>
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
+            </div>
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
+            </div>
+            <div class="croom-card">
+                <div class="banner"></div>
+                <div class="croom-btn">
+                    <a href="#" class="join">Join</a>
+                    <a href="#" class="edit">Edit</a>
+                    <a class="delete">Delete</a>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -20,7 +20,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-body header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -36,7 +36,6 @@ header {
   justify-content: space-between;
   padding: 30px 32px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-  z-index: 100;
   background-color: #fff;
 }
 
@@ -122,7 +121,7 @@ hr {
   background-color: #f1f1f1;
   border-right: none;
   padding: 5px 15px;
-  height: 20px;
+  height: 25px;
   border-radius: 15px 0 0 15px;
   outline: none;
 }
@@ -184,128 +183,7 @@ hr {
   margin-left: 15px;
 }
 
-.card-container {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.card-container h1 {
-  font-size: 32px;
-  padding: 0;
-  margin: 0;
-  color: var(--dark-color);
-}
-
-.card-container button {
-  margin-top: 15px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  padding: 5px 15px;
-  outline: none;
-  color: orange;
-  border: 2px solid orange;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card-container button:hover {
-  transition: 0.3s;
-  background-color: orange;
-  color: white;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-}
-
-.grid > article {
-  background-color: rgb(248, 248, 248);
-  border: none;
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  width: 275px;
-  transition: 0.3s;
-}
-
-.grid > article:hover {
-  transform: translateY(5px);
-  box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-}
-
-.grid > article .img-container {
-  background-image: url("../img/card-banner.png");
-  width: 100%;
-  height: 120px;
-  border-radius: 20px;
-}
-
-.img-container p {
-  font-size: 12px;
-  padding: 15px;
-  margin: 0;
-  color: white;
-}
-
-.creator-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.creator-container .creator h3 {
-  font-size: 12px;
-  line-height: 0.1;
-}
-.creator-container .creator p {
-  font-size: 12px;
-}
-
-.text {
-  padding: 0 10px 10px;
-}
-
-.text h3 {
-  color: var(--dark-color);
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 0.5;
-}
-
-.text p {
-  font-size: 14px;
-}
-
-.text button {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  border: none;
-  color: var(--light-color);
-  padding: 10px;
-  width: 100%;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-@media (max-width: 1500px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (max-width: 1150px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .left img {
     display: none;
   }
@@ -325,11 +203,6 @@ hr {
   .wrap {
     position: absolute;
     left: 31%;
-  }
-}
-@media (max-width: 750px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -352,6 +225,111 @@ hr {
     font-size: 10px;
   }
 }
+
+.content-header {
+  border-bottom: 2px solid gray;
+  width: 80%;
+  margin: 100px auto 0;
+}
+
+.content-header ul {
+  display: flex;
+  margin: 0;
+}
+
+.content-header ul li {
+  list-style: none;
+  padding: 5px 10px;
+}
+
+.content-header ul li a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.active {
+  background-color: gainsboro;
+}
+
+.croom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding-top: 100px;
+}
+
+.croom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+    align-items: center;
+}
+
+.croom-card .banner {
+    background-image: url("../../assets/img/card-banner.png");
+    width: 358px;
+    height: 120px;
+    border-radius: 20px;
+}
+
+.croom-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.croom-btn a, button{
+    text-decoration: none;
+    padding: 5px 25px;
+}
+
+.join {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+.join:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: 0.3s;
+}
+.edit {
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: orange;
+    transition: 0.3s;
+}
+
+.edit:hover {
+    background-color: orange;
+    color: #fff;
+    transition: 0.3s;
+}
+.delete {
+    border: 2px solid tomato;
+    background-color: #fff;
+    border-radius: 5px;
+    color: tomato;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    background-color: tomato;
+    color: #fff;
+    transition: 0.3s;
+}
+
+
+
 .footer {
   margin-top: 200px;
   position: absolute;

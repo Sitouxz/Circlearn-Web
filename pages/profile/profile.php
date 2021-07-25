@@ -110,6 +110,7 @@ With Productive Community of Students." />
                     <div class="top">
                         <div class="user">
                             <div class="profile-picture"></div>
+                            <button>Change Picture</button>
                             <div class="user-name">
                                 <h4>Name</h4>
                                 <p>Jokowi</p>
