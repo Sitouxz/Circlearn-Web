@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="right">
-            <a href="room/createRoom.php">
+            <a href="createRoom.php">
             <button>Create Room</button></a>
             <div class="user">
         <?php

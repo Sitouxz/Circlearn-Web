@@ -47,13 +47,13 @@
         var count = 4;
         $("#show_more").click(function() {
             count = count + 4;
-            $("#room").load("room/more-room.php", {
+            $("#room").load("include/more-room.php", {
                 count: count
             })
         })
         $(".searchTerm").keyup(function() {
             var searchRoom = $("#search").val();
-            $.post("room/search-room.php", {
+            $.post("include/search-room.php", {
                 search: searchRoom
             }, function(data, status) {
                 $("#room").html(data)
@@ -65,40 +65,20 @@
 </head>
 
 <body>
-    <?php include 'header.php'?>
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
             <div class="grid" id="room">
                 <?php   
-              include 'room/default-room.php';
+              include 'include/default-room.php';
             ?>
             </div>
             <button id="show_more">Show more!</button>
         </div>
     </section>
-    <div class="footer">
-        <div class="footer-container">
-            <div class="footer-nav">
-                <img src="../assets/img/Footer-logo.svg" alt="Logo" />
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="copyright">
-                <p>&#169; 2021 copyright all right reserved</p>
-                <div class="social-media">
-                    <a href="#"><i class="bx bxl-instagram"> </i></a>
-                    <a href="#"><i class="bx bxl-twitter"> </i></a>
-                    <a href="#"><i class="bx bxl-facebook"> </i></a>
-                </div>
-            </div>
-        </div>
+    
+    <?php include 'include/footer.php'?>
+
         <script>
         function myFunction() {
             var x = document.getElementById("myLinks");
