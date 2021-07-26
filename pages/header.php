@@ -14,14 +14,15 @@
             </div>
         </div>
         <div class="right">
-            <button>Create Room</button>
+            <a href="room/createRoom.php">
+            <button>Create Room</button></a>
             <div class="user">
         <?php
             if (!empty($_SESSION["nick"])) {
                 echo "<p>".$_SESSION["nick"]."</p>";
             }
             else{
-                echo "<p>Signup please!</p>";
+                echo "<p>Log-in please!</p>";
             }
             
         ?>
@@ -32,3 +33,17 @@
             </a>
         </div>
     </header>
+    
+    <div class="dropdown" id="myLinks">
+        <ul>
+            <li><a href="#">Profile</a></li>
+            <hr>
+            <li><a href="#">Privacy</a></li>
+            <hr>
+            <li><a href="#">Menu</a></li>
+            <hr>
+            <li><a href="#">Menu</a></li>
+            <hr>
+            <li class="log-out-link"><a href="#">log out</a></li>
+        </ul>
+    </div>

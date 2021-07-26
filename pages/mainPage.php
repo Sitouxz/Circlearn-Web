@@ -66,20 +66,6 @@
 
 <body>
     <?php include 'header.php'?>
-    <div class="dropdown" id="myLinks">
-        <ul>
-            <li><a href="#">Profile</a></li>
-            <hr>
-            <li><a href="#">Privacy</a></li>
-            <hr>
-            <li><a href="#">Menu</a></li>
-            <hr>
-            <li><a href="#">Menu</a></li>
-            <hr>
-            <li class="log-out-link"><a href="#">log out</a></li>
-        </ul>
-    </div>
-
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
