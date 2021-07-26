@@ -34,13 +34,13 @@
     <meta name="twitter:image" content="./assets/img/Hero-logo.svg" />
     <title>Create Room | Circlearn</title>
     <link rel="shortcut icon" href="../../assets/img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../../assets/css/createRoom.css" />
+    <link rel="stylesheet" href="../assets/css/createRoom.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-    <?php include '../header.php'?>
+    <?php include 'include/header.php'?>
 
     <div class="content-header">
         <ul>
@@ -55,48 +55,29 @@
             <button>Change Banner</button>
         </div>
 
-        <div class="room-info-container">
+        <form class="room-info-container" action="../assets/include/createRoom.inc.php" method="post">
             <div class="room-info">
                 <label>
                     <span>Room name</span>
-                    <input type="text" />
+                    <input type="text" name="roomName" />
                 </label>
                 <label>
                     <span>Room Subject</span>
-                    <input type="text" />
+                    <input type="text" name="roomSubject" />
+                </label>
+                <label>
+                    <span>Link</span>
+                    <input type="text" name="link" />
                 </label>
                 <label>
                     <span>Room Description</span>
-                    <textarea name="" id="" cols="50" rows="10"></textarea>
+                    <textarea name="des" id="" cols="50" rows="10"></textarea>
                 </label>
             </div>
-            <button>Create</button>
-        </div>
+            <button type="submit" name="submit">Create</button>
+        </form>
     </div>
 
-    <div class="footer">
-        <div class="footer-container">
-            <div class="footer-nav">
-                <img src="../../assets/img/Footer-logo.svg" alt="Logo" />
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="copyright">
-                <p>&#169; 2021 copyright all right reserved</p>
-                <div class="social-media">
-                    <a href="#"><i class="bx bxl-instagram"> </i></a>
-                    <a href="#"><i class="bx bxl-twitter"> </i></a>
-                    <a href="#"><i class="bx bxl-facebook"> </i></a>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
     function myFunction() {
         var x = document.getElementById("myLinks");

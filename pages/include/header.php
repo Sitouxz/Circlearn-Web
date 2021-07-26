@@ -12,12 +12,19 @@
                 <i class="fa fa-search"></i>
             </button>
         </div>
-    </div>
-    <div class="right">
-        <a href="room/createRoom.php">
-            <button>Create Room</button></a>
-        <div class="user">
-            <?php
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Search room" id="search" />
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="right">
+            <a href="createRoom.php">
+                <button>Create Room</button></a>
+            <div class="user">
+                <?php
             if (!empty($_SESSION["nick"])) {
                 echo "<p>".$_SESSION["nick"]."</p>";
             }
@@ -26,12 +33,12 @@
             }
             
         ?>
-            <img src="../assets/img/User-avatar.png" alt="User" />
+                <img src="../assets/img/User-avatar.png" alt="User" />
+            </div>
+            <a href="../assets/include/logout.inc.php">
+                <img src="../assets/img/Exit.svg" alt="" />
+            </a>
         </div>
-        <a href="../assets/include/logout.inc.php">
-            <img src="../assets/img/Exit.svg" alt="" />
-        </a>
-    </div>
 </header>
 
 <div class="dropdown" id="myLinks">
