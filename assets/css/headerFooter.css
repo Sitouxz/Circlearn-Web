@@ -37,14 +37,13 @@ header {
   padding: 30px 32px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 .left {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 0;
-  width: 325px;
 }
 
 .left .logo {
@@ -58,22 +57,6 @@ header {
 
 .left a {
   display: none;
-  color: var(--dark-color);
-}
-
-.left ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-.left ul li {
-  list-style: none;
-  padding: 0 5px;
-}
-
-.left ul li a {
-  text-decoration: none;
   color: var(--dark-color);
 }
 
@@ -159,8 +142,6 @@ hr {
   justify-content: space-between;
   align-items: center;
   height: 0;
-  width: 300px;
-  margin-right: 50px;
 }
 
 .right button {
@@ -186,6 +167,10 @@ hr {
   margin: 0 10px;
 }
 
+.user p {
+  margin: 0 5px 0 10px;
+}
+
 .user button {
   border: none;
   text-align: center;
@@ -194,7 +179,6 @@ hr {
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   font-size: 14px;
-  margin-top: 15px;
   padding: 5px 15px;
 }
 
@@ -202,12 +186,12 @@ hr {
     background-color: #f1f1f1;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1000px) {
   .left img {
     display: none;
   }
 
-  .left a {
+  .left .burger {
     display: block;
   }
 
@@ -215,17 +199,29 @@ hr {
     display: none;
   }
 
-  .right a {
+  .wrap {
+    left: 35%;
+  }
+
+  header {
+    margin: 0;
+    
+  }
+
+  .right {
+    justify-content: unset;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .right .exit {
     display: none;
   }
 
-  .wrap {
-    position: absolute;
-    left: 31%;
-  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .right button {
     border: 1px solid var(--gray-color);
     border-radius: 5px;
@@ -237,7 +233,16 @@ hr {
   }
 
   header {
-    padding: 30px 15spx;
+    padding: 30px 15px;
+  }
+
+  .wrap {
+    left: 30%;
+  }
+
+  .right {
+    padding: 0;
+    margin: 0;
   }
 
   .searchTerm {

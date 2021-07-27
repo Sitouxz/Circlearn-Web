@@ -3,7 +3,7 @@
         <a class="logo" href="../pages/mainPage.php">
             <img src="../assets/img/Hero-logo.svg" alt="Logo" />
         </a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="burger" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
@@ -30,7 +30,7 @@
         ?>
             <img src="../assets/img/User-avatar.png" alt="User" />
         </div>
-        <a href="../assets/include/logout.inc.php">
+        <a href="../assets/include/logout.inc.php" class="exit">
             <img src="../assets/img/Exit.svg" alt="" />
         </a>
     </div>
@@ -49,3 +49,14 @@
         <li class="log-out-link"><a href="#">log out</a></li>
     </ul>
 </div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
