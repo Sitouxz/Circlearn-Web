@@ -66,6 +66,8 @@
 </head>
 
 <body>
+    <?php include 'include/header.php'?>
+
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>

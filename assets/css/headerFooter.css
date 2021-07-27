@@ -47,7 +47,11 @@ header {
   width: 325px;
 }
 
-.left img {
+.left .logo {
+  display: block;
+}
+
+.logo img {
   width: 135px;
   height: 25.17px;
 }
@@ -155,7 +159,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   height: 0;
-  width: 275px;
+  width: 300px;
   margin-right: 50px;
 }
 
@@ -176,6 +180,10 @@ hr {
 .user {
   display: flex;
   align-items: center;
+}
+
+.user img {
+  margin: 0 10px;
 }
 
 .user button {
@@ -242,7 +250,6 @@ hr {
 
 .footer {
   margin-top: 200px;
-  bottom: 0;
   width: 100%;
 }
 

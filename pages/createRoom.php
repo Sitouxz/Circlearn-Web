@@ -31,9 +31,10 @@
     <meta name="twitter:title" content="Circlearn" />
     <meta name="twitter:description"
         content="Join The Circle And Learn Together according to the subjects you are interested in With Productive Community of Students." />
-    <meta name="twitter:image" content="./assets/img/Hero-logo.svg" />
+    <meta name="twitter:image" content="../assets/img/Hero-logo.svg" />
     <title>Create Room | Circlearn</title>
-    <link rel="shortcut icon" href="../../assets/img/Logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/img/Logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/headerFooter.css" />
     <link rel="stylesheet" href="../assets/css/createRoom.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -77,6 +78,8 @@
             <button type="submit" name="submit">Create</button>
         </form>
     </div>
+
+    <?php include 'include/footer.php'?>
 
     <script>
     function myFunction() {
