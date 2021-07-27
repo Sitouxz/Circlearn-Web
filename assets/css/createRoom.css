@@ -28,9 +28,10 @@
 .croom-container {
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  flex-direction: column;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .cbanner {
@@ -85,7 +86,11 @@
   font-weight: 500;
 }
 
-.room-info input, textarea {
+.room-info select {
+  width: 512px;
+}
+
+.room-info input, textarea, select {
   width: 500px;
   padding: 5px 5px;
   outline: none;
@@ -122,6 +127,7 @@
   background-color: var(--primary-color);
   color: white;
 }
+
 
 @media (max-width: 1000px) {
   .croom-container {

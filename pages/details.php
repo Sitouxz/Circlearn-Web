@@ -32,8 +32,7 @@
     <meta name="twitter:description"
         content="Join The Circle And Learn Together according to the subjects you are interested in With Productive Community of Students." />
     <meta name="twitter:image" content="../assets/img/Hero-logo.svg" />
-    <title>
-        <Details></Details> Room | Circlearn
+    <title> Room | Circlearn
     </title>
     <link rel="shortcut icon" href="../assets/img/Logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/headerFooter.css" />
@@ -45,10 +44,32 @@
 <body>
     <?php include 'include/header.php'?>
 
+    <div class="details-container">
+        <div class="banner">
+            <p>1 | Jokowi</p>
+        </div>
 
+        <h4>Name</h4>
+        <p>Jokowi</p>
+        <h4>Subject</h4>
+        <p>Science</p>
+        <h4>Description</h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus sequi perspiciatis nisi animi beatae
+            architecto?</p>
+    </div>
 
     <?php include 'include/footer.php'?>
 
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    </script>
 
 </body>
 

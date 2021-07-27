@@ -26,7 +26,7 @@ With Productive Community of Students." />
     <meta property="og:description" content="Join The Circle And Learn Together
 according to the subjects you are interested in
 With Productive Community of Students." />
-    <meta property="og:image" content="./assets/img/Hero-logo.svg" />
+    <meta property="og:image" content="../assets/img/Hero-logo.svg" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,9 +36,10 @@ With Productive Community of Students." />
     <meta name="twitter:description" content="Join The Circle And Learn Together
 according to the subjects you are interested in
 With Productive Community of Students." />
-    <meta name="twitter:image" content="./assets/img/Hero-logo.svg" />
+    <meta name="twitter:image" content="../assets/img/Hero-logo.svg" />
     <title>Profile | Circlearn</title>
-    <link rel="shortcut icon" href="../../assets/img/Logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/img/Logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/headerFooter.css" />
     <link rel="stylesheet" href="../assets/css/profile.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -46,7 +47,7 @@ With Productive Community of Students." />
 
 
 <body>
-<?php include 'include/header.php'?>
+    <?php include 'include/header.php'?>
     <div class="profile-popup" id="popup">
         <div class="close-btn"><a href="javascript:void(0);" class="icon" onclick="closeProfile()">
                 <i class="fa fa-close"></i>
@@ -54,7 +55,7 @@ With Productive Community of Students." />
         <div class="profile-container">
             <div class="profile-nav">
                 <ul>
-                    <li class="active"><a href="#">Basic Info</a></li>
+                    <li><a href="javascript:void(0);" onclick="basicInfo()">Basic Info</a></li>
                     <li><a href="javascript:void(0);" onclick="bookmarks()">Bookmarks</a></li>
                     <li class="logout"><a href="#">Log out</a></li>
                 </ul>
@@ -66,9 +67,12 @@ With Productive Community of Students." />
                     <div class="top">
                         <div class="user">
                             <div class="profile-picture"></div>
+                            <br>
                             <button>Change Picture</button>
+                            <br>
                             <div class="user-name">
                                 <h4>Name</h4>
+                                <br>
                                 <p>Jokowi</p>
                             </div>
                         </div>
@@ -99,18 +103,75 @@ With Productive Community of Students." />
                 </div>
 
                 <div class="bookmarks-content" id="bookmarks">
-                    <ul>
-                        <li><a href="#">Room 1</a></li>
-                        <li><a href="#">Room 2</a></li>
-                        <li><a href="#">Room 3</a></li>
-                    </ul>
+                    <div class="bookmarks-card-container">
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                        <div class="bookmarks-card">
+                            <div class="banner">
+                                <p>1 | Jokowi</p>
+                            </div>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <?php //include 'include/footer.php'?>
-    
+
     <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
@@ -135,16 +196,18 @@ With Productive Community of Students." />
         }
     }
 
+    function basicInfo() {
+        var x = document.getElementById("basic");
+        var z = document.getElementById("bookmarks");
+        x.style.display = "block";
+        z.style.display = "none";
+    }
+
     function bookmarks() {
         var x = document.getElementById("basic");
         var z = document.getElementById("bookmarks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-            y.style.display = "block"
-        } else {
-            x.style.display = "block";
-            y.style.display = "none"
-        }
+        x.style.display = "none";
+        z.style.display = "block";
     }
     </script>
 </body>

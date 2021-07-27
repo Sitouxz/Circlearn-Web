@@ -1,0 +1,29 @@
+.details-container {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner {
+    background-image: url("../img/card-banner.png");
+  width: 358px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.banner p {
+    font-size: 12px;
+  padding: 15px;
+  margin: 0;
+  color: white;
+}
+
+.details-container h4 {
+    width: 358px;
+    text-align: left;
+}
+
+.details-container p{
+    width: 358px;
+}
