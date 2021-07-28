@@ -19,28 +19,29 @@
                         <div class="user">
                             <div class="profile-picture"></div>
                             <br>
-                            <button>Change Picture</button>
+                            <form action="../assets/include/upload-img.php" method="POST" enctype="multipart/form-data">
+                            <input type="file" class="input-img" name="avatar" onchange="form.submit()"/>
                             <br>
                             <div class="user-name">
                                 <h4>Name</h4>
                                 <br>
-                                <p>Jokowi</p>
+<?php   echo"                   <p>".$_SESSION["nick"]."</p>"?>
                             </div>
                         </div>
+                        <div class='user-info'>
+                        <h4>Gender</h4>
                     <?php
-        echo"            <h4>Gender</h4>"
-        echo"        <div class="user-info">"
-        echo"            <p>Male</p>"
-        echo"            <h4>Address</h4>"
-        echo"            <p>Wakanda, USA</p>"
-        echo"            <h4>Email</h4>"
-        echo"            <p>Budimeister@gmail.com</p>"
-        echo"            <h4>Phone Number</h4>"
-        echo"            <p>08123456789</p>"
-        echo"           <br>"
-        echo"           <button>Edit Profile</button>"
-        echo"        </div>"
+        echo"            <p>".$_SESSION["gender"]."</p>";
+        echo"            <h4>Address</h4>";
+        echo"            <p>Wakanda, USA</p>";
+        echo"            <h4>Email</h4>";
+        echo"            <p>".$_SESSION["email"]."</p>";
+        echo"            <h4>Phone Number</h4>";
+        echo"            <p>08123456789</p>";
+        echo"           <br>";
+        echo"           <button>Edit Profile</button>";
                     ?>
+                        </div>
                     </div>
                     <div class="bottom">
                         <div class="other-info">
@@ -123,40 +124,40 @@
         </div>
     </div>
     <script>
-    function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
         }
-    }
 
-    function closeProfile() {
-        var x = document.getElementById("popup");
-        x.style.display = "none";
-    }
-
-    function profilePopup() {
-        var x = document.getElementById("popup");
-        if (x.style.display === "block") {
+        function closeProfile() {
+            var x = document.getElementById("popup");
             x.style.display = "none";
-        } else {
-            x.style.display = "block";
         }
-    }
 
-    function basicInfo() {
-        var x = document.getElementById("basic");
-        var z = document.getElementById("bookmarks");
-        x.style.display = "block";
-        z.style.display = "none";
-    }
+        function profilePopup() {
+            var x = document.getElementById("popup");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
 
-    function bookmarks() {
-        var x = document.getElementById("basic");
-        var z = document.getElementById("bookmarks");
-        x.style.display = "none";
-        z.style.display = "block";
-    }
+        function basicInfo() {
+            var x = document.getElementById("basic");
+            var z = document.getElementById("bookmarks");
+            x.style.display = "block";
+            z.style.display = "none";
+        }
+
+        function bookmarks() {
+            var x = document.getElementById("basic");
+            var z = document.getElementById("bookmarks");
+            x.style.display = "none";
+            z.style.display = "block";
+        }
     </script>

@@ -81,21 +81,21 @@
     </section>
 
     <?php include 'include/footer.php'?>
-    <?php include 'profile.php'?>
+    <?php include 'include/profile.php'?>
 
     <script>
-    function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function openProfile() {
+            var x = document.getElementById("popup");
             x.style.display = "block";
         }
-    }
-    function openProfile() {
-        var x = document.getElementById("popup");
-        x.style.display = "block";
-    }
     </script>
 </body>
 
