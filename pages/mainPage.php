@@ -61,6 +61,12 @@
                 $('#show_more').hide();
             });
         })
+        $("#save-info").click(function() {
+            var about = $("#about").val();
+            $.post("include/updateAbout.php", {
+                about: about
+            });
+        })
     })
     </script>
 </head>

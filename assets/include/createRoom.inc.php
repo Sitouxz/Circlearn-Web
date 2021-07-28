@@ -10,29 +10,19 @@
     require_once 'dbh.inc.php';
     require_once 'roomFunctions.inc.php';
 
-    if (emptyInputSignup($username,$email,$pwd,$repwd) !== false ) {
-        header("location: ../../pages/login.php?error=emptyinput");
+    if (emptyRoomInput($roomName, $roomSubject, $link, $des) !== false ) {
+        header("location: ../../pages/createRoom.php?error=emptyinput");
         exit();
     }
-    if (invalidUid($username) !== false ) {
-        header("location: ../../pages/login.php?error=invalidusername");
+    if (roomExists($roomName) !== false ) {
+        header("location: ../../pages/createRoom.php?error=roomExist");
         exit();
     }
-    if (invalidEmail($email) !== false ) {
-        header("location: ../../pages/login.php?error=invalidemail");
+    if (invalidLink($link) !== false ) {
+        header("location: ../../pages/createRoom.php?error=invalidLink");
         exit();
     }
-    if (pwdMatch($pwd,$repwd) !== false ) {
-        header("location: ../../pages/login.php?error=pwdnotmatch");
-        exit();
-    }
-    if (uidExists($conn,$email,$username) !== false ) {
-        header("location: ../../pages/login.php?error=emailtaken");
-        exit();
-    }
-
-    createUser($conn, $username, $email, $pwd);
-    loginUser($conn, $email, $pwd);
+    createRoom($roomName, $roomSubject, $link, $des);
 }
 else{
     header("location: ../../pages/login.php");

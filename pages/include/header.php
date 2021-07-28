@@ -9,7 +9,7 @@
     </div>
     <div class="wrap">
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="Search room" id="search" />
+            <input type="search" class="searchTerm" placeholder="Search room" id="search" />
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
@@ -19,6 +19,7 @@
         <a href="createRoom.php">
             <button>Create Room</button></a>
             <?php
+            $id = $_SESSION["userid"];
             if (!empty($_SESSION["nick"])) {
                 echo "<a href='javascript:void(0);' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
@@ -31,7 +32,11 @@
                 header("location: login.php");
             }
             if (!empty($_SESSION["nick"])) {
-                echo "<img src='../assets/img/User-avatar.png' alt='User' />";
+                echo "<img class='avatar-mini' src='../assets/upload/profile".$id.".jpg?".mt_rand()."' alt='User' />";
+            }else{
+                echo "<img class='avatar-mini' src='../assets/img/User-avatar.png' alt='User' />";
+                $sql = "UPDATE ava SET status=0 WHERE userId='$id';";
+                mysqli_query($conn,$sql);
             }
             echo "</a>"
         ?>

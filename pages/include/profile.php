@@ -19,14 +19,14 @@
                         <div class="user">
 
                             <!-- isi pop-up manage profile picture dari sini -->
-                            <?php
+                        <?php
                             $id = $_SESSION["userid"];
                             $sql = "SELECT * FROM ava WHERE userId=$id;";
                             $result = mysqli_query($conn, $sql);
                             if ($rowAva = mysqli_fetch_assoc($result)) {
                                 if ($rowAva['status']==1) {
                                     if(file_exists("../assets/upload/profile".$id.".jpg")){
-                                        echo "<img class='avatar' src='../assets/upload/profile".$id.".jpg'>";
+                                        echo "<img class='avatar' src='../assets/upload/profile".$id.".jpg?".mt_rand()."'>";
                                     }
                                     else {
                                         echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
@@ -37,9 +37,9 @@
                             }else {
                                 echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
                             }
-                            ?>
+                        ?>
                             <br>
-                            <form action="../assets/include/upload-img.php" method="POST" enctype="multipart/form-data">
+                            <form action="../assets/include/uploadAva.php" method="POST" enctype="multipart/form-data">
                             <input type="file" class="input-img" name="avatar" onchange="form.submit()"/>
                             </form>
                             <!-- sampe sini -->
@@ -69,15 +69,16 @@
                     </div>
                     <div class="bottom">
                         <div class="other-info">
-                            <h4>Other Information</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit similique consequuntur
-                                impedit
-                                consectetur quas voluptatem doloribus expedita pariatur, dicta soluta quaerat
-                                reprehenderit
-                                autem
-                                provident mollitia aspernatur tempore! Vel, inventore a?</p>
+                            <h4>About me.</h4>
+                        <input type="text" id="about" value="<?php
+                            if ($_SESSION["about"]==NULL||$_SESSION["about"]==''){
+                            }else{
+                            echo $_SESSION["about"];
+                            }
+                        ?>" placeholder="....">
                         </div>
                     </div>
+                    <button id="save-info">Save</button>
                 </div>
 
                 <div class="bookmarks-content" id="bookmarks">
@@ -148,6 +149,7 @@
         </div>
     </div>
     <script>
+        
         function myFunction() {
             var x = document.getElementById("myLinks");
             if (x.style.display === "block") {
