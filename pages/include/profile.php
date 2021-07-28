@@ -17,10 +17,32 @@
                 <div class="profile-content" id="basic">
                     <div class="top">
                         <div class="user">
-                            <div class="profile-picture"></div>
+
+                            <!-- isi pop-up manage profile picture dari sini -->
+                            <?php
+                            $id = $_SESSION["userid"];
+                            $sql = "SELECT * FROM ava WHERE userId=$id;";
+                            $result = mysqli_query($conn, $sql);
+                            if ($rowAva = mysqli_fetch_assoc($result)) {
+                                if ($rowAva['status']==1) {
+                                    if(file_exists("../assets/upload/profile".$id.".jpg")){
+                                        echo "<img class='avatar' src='../assets/upload/profile".$id.".jpg'>";
+                                    }
+                                    else {
+                                        echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                                        $sql = "UPDATE ava SET status=0 WHERE userId='$id';";
+                                        mysqli_query($conn,$sql);
+                                    }
+                                }
+                            }else {
+                                echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                            }
+                            ?>
                             <br>
                             <form action="../assets/include/upload-img.php" method="POST" enctype="multipart/form-data">
                             <input type="file" class="input-img" name="avatar" onchange="form.submit()"/>
+                            </form>
+                            <!-- sampe sini -->
                             <br>
                             <div class="user-name">
                                 <h4>Name</h4>

@@ -11,7 +11,7 @@
         header("location: ../../pages/login.php?error=emptyinput");
         exit();
     }
-
+    
     loginUser($conn, $email, $pwd);
 
 }

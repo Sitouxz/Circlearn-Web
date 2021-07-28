@@ -164,3 +164,8 @@
     color: #fff;
     transition: 0.3s;
 }
+.avatar{
+  width: 244px;
+  height: 244px;
+  border-radius: 50%;
+}

@@ -111,3 +111,10 @@ function loginUser($conn, $username, $pwd){
         exit();
     }
 }
+function setAva($conn, $username)
+{
+    $data = uidExists($conn, $username, $username);
+    $id = $data["userId"];
+    $sql = "INSERT INTO ava (userId, status) VALUES ('$id', 0);";
+    mysqli_query($conn,$sql);
+}

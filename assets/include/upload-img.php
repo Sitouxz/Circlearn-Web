@@ -1,4 +1,8 @@
 <?php
+session_start();
+include_once 'dbh.inc.php';
+
+$id = $_SESSION['userid'];
 
 $avatar = $_FILES['avatar'];
 
@@ -16,9 +20,11 @@ $allowed = array('jpg','jpeg','png');
 if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
         if ($fileSize<2580104) {
-            $fileNameNew = uniqid('',true).".".$fileActualExt;
+            $fileNameNew = "profile".$id.".".$fileActualExt;
             $fileDestination = '../upload/'.$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
+            $sql = "UPDATE ava SET status=1 WHERE userId='$id';";
+            mysqli_query($conn,$sql);
             header("location: ../../pages/mainPage.php");
         } else {
             echo "Your File is too big!";

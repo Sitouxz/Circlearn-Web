@@ -32,6 +32,9 @@
     }
 
     createUser($conn, $username, $email, $pwd);
+    
+    setAva($conn, $username);
+
     loginUser($conn, $email, $pwd);
 }
 else{
