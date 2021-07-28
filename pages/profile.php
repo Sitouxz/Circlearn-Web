@@ -1,53 +1,4 @@
-<?php
-    session_start();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Circlearn" />
-    <meta name="description" content="Join The Circle And Learn Together
-according to the subjects you are interested in
-With Productive Community of Students." />
-    <!-- HTML Meta Tags -->
-    <title>Rooms | Circlearn</title>
-    <meta name="description" content="Join The Circle And Learn Together
-according to the subjects you are interested in
-With Productive Community of Students." />
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://sitouxz.github.io/Circlearn-Web/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Circlearn" />
-    <meta property="og:description" content="Join The Circle And Learn Together
-according to the subjects you are interested in
-With Productive Community of Students." />
-    <meta property="og:image" content="../assets/img/Hero-logo.svg" />
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="sitouxz.github.io" />
-    <meta property="twitter:url" content="https://sitouxz.github.io/Circlearn-Web/" />
-    <meta name="twitter:title" content="Circlearn" />
-    <meta name="twitter:description" content="Join The Circle And Learn Together
-according to the subjects you are interested in
-With Productive Community of Students." />
-    <meta name="twitter:image" content="../assets/img/Hero-logo.svg" />
-    <title>Profile | Circlearn</title>
-    <link rel="shortcut icon" href="../assets/img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../assets/css/headerFooter.css" />
-    <link rel="stylesheet" href="../assets/css/profile.css" />
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
-
-
-<body>
-    <?php include 'include/header.php'?>
     <div class="profile-popup" id="popup">
         <div class="close-btn"><a href="javascript:void(0);" class="icon" onclick="closeProfile()">
                 <i class="fa fa-close"></i>
@@ -76,18 +27,20 @@ With Productive Community of Students." />
                                 <p>Jokowi</p>
                             </div>
                         </div>
-                        <div class="user-info">
-                            <h4>Gender</h4>
-                            <p>Male</p>
-                            <h4>Address</h4>
-                            <p>Wakanda, USA</p>
-                            <h4>Email</h4>
-                            <p>Budimeister@gmail.com</p>
-                            <h4>Phone Number</h4>
-                            <p>08123456789</p>
-                            <br>
-                            <button>Edit Profile</button>
-                        </div>
+                    <?php
+        echo"            <h4>Gender</h4>"
+        echo"        <div class="user-info">"
+        echo"            <p>Male</p>"
+        echo"            <h4>Address</h4>"
+        echo"            <p>Wakanda, USA</p>"
+        echo"            <h4>Email</h4>"
+        echo"            <p>Budimeister@gmail.com</p>"
+        echo"            <h4>Phone Number</h4>"
+        echo"            <p>08123456789</p>"
+        echo"           <br>"
+        echo"           <button>Edit Profile</button>"
+        echo"        </div>"
+                    ?>
                     </div>
                     <div class="bottom">
                         <div class="other-info">
@@ -169,9 +122,6 @@ With Productive Community of Students." />
             </div>
         </div>
     </div>
-
-    <?php //include 'include/footer.php'?>
-
     <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
@@ -210,6 +160,3 @@ With Productive Community of Students." />
         z.style.display = "block";
     }
     </script>
-</body>
-
-</html>

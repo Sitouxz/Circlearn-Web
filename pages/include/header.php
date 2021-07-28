@@ -18,6 +18,7 @@
     <div class="right">
         <a href="createRoom.php">
             <button>Create Room</button></a>
+        <a href="javascript:void(0);" onclick="openProfile()">
         <div class="user">
             <?php
             if (!empty($_SESSION["nick"])) {
@@ -29,6 +30,7 @@
             
         ?>
             <img src="../assets/img/User-avatar.png" alt="User" />
+        </a>
         </div>
         <a href="../assets/include/logout.inc.php" class="exit">
             <img src="../assets/img/Exit.svg" alt="" />

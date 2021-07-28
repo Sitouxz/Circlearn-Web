@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="../assets/css/mainPage.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/profile.css" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -81,6 +81,7 @@
     </section>
 
     <?php include 'include/footer.php'?>
+    <?php include 'profile.php'?>
 
     <script>
     function myFunction() {
@@ -90,6 +91,10 @@
         } else {
             x.style.display = "block";
         }
+    }
+    function openProfile() {
+        var x = document.getElementById("popup");
+        x.style.display = "block";
     }
     </script>
 </body>
