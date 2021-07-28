@@ -18,19 +18,25 @@
     <div class="right">
         <a href="createRoom.php">
             <button>Create Room</button></a>
-        <a href="javascript:void(0);" onclick="openProfile()">
-        <div class="user">
             <?php
             if (!empty($_SESSION["nick"])) {
+                echo "<a href='javascript:void(0);' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
+                echo "<div class='user'>";
             }
             else{
-                echo "<p>Log-in please!</p>";
+                echo "<a href='login.php'>";
+                echo "<div class='user'>";
+                echo "<p>Log-in!</p>";
+                header("location: login.php");
             }
-            
+            if (!empty($_SESSION["nick"])) {
+                echo "<img src='../assets/img/User-avatar.png' alt='User' />";
+            }
+            echo "</a>"
         ?>
-            <img src="../assets/img/User-avatar.png" alt="User" />
-        </a>
+            
+        
         </div>
         <a href="../assets/include/logout.inc.php" class="exit">
             <img src="../assets/img/Exit.svg" alt="" />

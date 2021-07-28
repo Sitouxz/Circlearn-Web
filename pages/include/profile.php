@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="javascript:void(0);" onclick="basicInfo()">Basic Info</a></li>
                     <li><a href="javascript:void(0);" onclick="bookmarks()">Bookmarks</a></li>
-                    <li class="logout"><a href="#">Log out</a></li>
+                    <li class="logout"><a href="../assets/include/logout.inc.php">Log out</a></li>
                 </ul>
             </div>
             <div class="content-side">
@@ -25,7 +25,9 @@
                             <div class="user-name">
                                 <h4>Name</h4>
                                 <br>
-<?php   echo"                   <p>".$_SESSION["nick"]."</p>"?>
+                                <?php echo"               
+                                <p>".$_SESSION["nick"]."</p>
+                                "?>
                             </div>
                         </div>
                         <div class='user-info'>
