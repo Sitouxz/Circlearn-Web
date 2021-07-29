@@ -1,0 +1,54 @@
+
+
+.close-btn a i {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  padding: 5px 6px;
+  border-radius: 50%;
+  color: var(--light-color);
+  background-color: tomato;
+  border: 1px solid var(--dark-color);
+}
+
+.close-btn a i:hover {
+  background-color: rgb(230, 70, 42);
+}
+
+.popup-container {
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 70px;
+    border: 2px solid rgb(31, 31, 31);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.photo-btn {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.photo-btn button{
+    border: none;
+  text-align: center;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  padding: 5px 15px;
+}

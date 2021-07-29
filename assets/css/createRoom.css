@@ -145,14 +145,23 @@
     width: 300px;
   }
 
+  .room-info select {
+  width: 312px;
+}
+
   .cbanner .banner{
     width: 300px;
   }
+  
 }
 @media (max-width: 350px) {
   .room-info input, textarea {
     width: 250px;
   }
+
+  .room-info select {
+  width: 262px;
+}
 
   .cbanner .banner {
     width: 200px;

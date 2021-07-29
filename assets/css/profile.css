@@ -5,7 +5,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 850px;
-  height: 600px;
+  height: 450px;
   border: 1px solid var(--dark-color);
   border-radius: 10px;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
@@ -60,7 +60,7 @@
 }
 
 .profile-container .profile-nav ul li.logout a {
-  color: rgb(172, 172, 172);
+  color: rgb(201, 70, 70);
 }
 
 .top {
@@ -73,6 +73,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 95px;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: var(--primary-color);
 }
 
 .user-name h4, .user-name p {
@@ -114,8 +127,34 @@
 .bottom {
   width: 500px;
   border: 1px solid var(--gray-color);
-  padding: 0 15px;
+  padding: 15px 15px;
   border-radius: 10px;
+}
+
+.other-info h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.other-info input{
+  width: 100%;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-button {
+  border: none;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 15px;
+  margin-top: 10px;
+  float: right;
 }
 
 .bookmarks-content {
@@ -126,7 +165,7 @@
   flex-wrap: wrap;
   margin-left: 40px;
   overflow-y: scroll;
-  height: 550px;
+  height: 400px;
 }
 
 .bookmarks-card {
@@ -165,7 +204,7 @@
     transition: 0.3s;
 }
 .avatar{
-  width: 244px;
-  height: 244px;
+  width: 256px;
+  height: 256px;
   border-radius: 50%;
 }
