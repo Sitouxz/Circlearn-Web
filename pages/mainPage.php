@@ -1,7 +1,4 @@
-<?php
-    session_start();
-    require_once '../assets/include/dbh.inc.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 
@@ -87,7 +84,6 @@
     </section>
 
     <?php include 'include/footer.php'?>
-    <?php include 'include/profile.php'?>
 
     <script>
         function myFunction() {
@@ -97,10 +93,6 @@
             } else {
                 x.style.display = "block";
             }
-        }
-        function openProfile() {
-            var x = document.getElementById("popup");
-            x.style.display = "block";
         }
     </script>
 </body>

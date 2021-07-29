@@ -158,7 +158,10 @@
                 x.style.display = "block";
             }
         }
-
+        function openProfile() {
+            var x = document.getElementById("popup");
+            x.style.display = "block";
+        }
         function closeProfile() {
             var x = document.getElementById("popup");
             x.style.display = "none";

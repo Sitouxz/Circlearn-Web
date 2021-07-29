@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 
@@ -65,7 +61,7 @@
                 </label>
                 <label>
                     <span>Room Subject</span>
-                    <select name="subject" id="subject">
+                    <select name="roomSubject" id="subject">
                         <option value="Science">Science</option>
                         <option value="History">History</option>
                         <option value="Math">Math</option>
@@ -79,7 +75,7 @@
                     <input type="text" name="link" />
                 </label>
                 <label>
-                    <span>Room Description</span>
+                    <span>Room Description (Optional)</span>
                     <textarea name="des" id="" cols="50" rows="10"></textarea>
                 </label>
             </div>

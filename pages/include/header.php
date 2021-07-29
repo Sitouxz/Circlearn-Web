@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once '../assets/include/dbh.inc.php';
+?>
+<link rel="stylesheet" href="../assets/css/profile.css" />
 <header>
     <div class="left">
         <a class="logo" href="../pages/mainPage.php">
@@ -20,6 +25,9 @@
             <button>Create Room</button></a>
             <?php
             $id = $_SESSION["userid"];
+            $id = $_SESSION["userid"];
+            $sql = "SELECT * FROM ava WHERE userId=$id;";
+            $result = mysqli_query($conn, $sql);
             if (!empty($_SESSION["nick"])) {
                 echo "<a href='javascript:void(0);' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
@@ -31,12 +39,18 @@
                 echo "<p>Log-in!</p>";
                 header("location: login.php");
             }
-            if (!empty($_SESSION["nick"])) {
-                echo "<img class='avatar-mini' src='../assets/upload/profile".$id.".jpg?".mt_rand()."' alt='User' />";
-            }else{
-                echo "<img class='avatar-mini' src='../assets/img/User-avatar.png' alt='User' />";
-                $sql = "UPDATE ava SET status=0 WHERE userId='$id';";
-                mysqli_query($conn,$sql);
+            if ($rowAva = mysqli_fetch_assoc($result)) {
+                if ($rowAva['status']==1) {
+                    if(file_exists("../assets/upload/profile".$id.".jpg")) {
+                        echo "<img class='avatar-mini' src='../assets/upload/profile".$id.".jpg?".mt_rand()."' alt='User' />";
+                    }else{
+                        echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
+                        $sql = "UPDATE ava SET status=0 WHERE userId='$id';";
+                        mysqli_query($conn,$sql);
+                    }
+                }
+            }else {
+                echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
             }
             echo "</a>"
         ?>
@@ -62,7 +76,7 @@
         <li class="log-out-link"><a href="#">log out</a></li>
     </ul>
 </div>
-
+<?php include 'profile.php'?>
 <script>
 function myFunction() {
     var x = document.getElementById("myLinks");

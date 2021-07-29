@@ -11,8 +11,13 @@
               <h3>Subject</h3>
               <p>".$room['roomSubject']."</p>
               <h3>description</h3>
-              <p>
-                ".$room['des']."
+              <p>";
+              if ($room["des"]==NULL||$room["des"]=='') {
+                 echo "-";
+              }else{
+                 echo $room["des"];
+              }
+              echo "
               </p>
               <a href=\"".$room['link']."\"><button>Join!</button></a>
             </div>

@@ -14,18 +14,18 @@
         header("location: ../../pages/createRoom.php?error=emptyinput");
         exit();
     }
-    if (roomExists($roomName) !== false ) {
+    if (roomExists($conn,$roomName) !== false ) {
         header("location: ../../pages/createRoom.php?error=roomExist");
         exit();
-    }
+   }
     if (invalidLink($link) !== false ) {
         header("location: ../../pages/createRoom.php?error=invalidLink");
         exit();
     }
-    createRoom($roomName, $roomSubject, $link, $des);
+    createRoom($conn, $roomName, $roomSubject, $link, $des);
 }
 else{
-    header("location: ../../pages/login.php");
+    header("location: ../../pages/createRoom.php");
     exit();
 }
 ?>
