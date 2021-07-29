@@ -3,6 +3,7 @@
     require_once '../assets/include/dbh.inc.php';
 ?>
 <link rel="stylesheet" href="../assets/css/profile.css" />
+<link rel="stylesheet" href="../assets/css/headerFooter.css" />
 <header>
     <div class="left">
         <a class="logo" href="../pages/mainPage.php">
@@ -23,13 +24,13 @@
     <div class="right">
         <a href="createRoom.php">
             <button>Create Room</button></a>
-            <?php
+        <?php
             $id = $_SESSION["userid"];
             $id = $_SESSION["userid"];
             $sql = "SELECT * FROM ava WHERE userId=$id;";
             $result = mysqli_query($conn, $sql);
             if (!empty($_SESSION["nick"])) {
-                echo "<a href='javascript:void(0);' onclick='openProfile()'>";
+                echo "<a href='javascript:void(0);' class='username' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
                 echo "<div class='user'>";
             }
@@ -54,12 +55,12 @@
             }
             echo "</a>"
         ?>
-            
-        
-        </div>
-        <a href="../assets/include/logout.inc.php" class="exit">
-            <img src="../assets/img/Exit.svg" alt="" />
-        </a>
+
+
+    </div>
+    <a href="../assets/include/logout.inc.php" class="exit">
+        <img src="../assets/img/Exit.svg" alt="" />
+    </a>
     </div>
 </header>
 
