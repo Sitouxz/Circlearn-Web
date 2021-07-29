@@ -22,6 +22,7 @@
         header("location: ../../pages/createRoom.php?error=invalidLink");
         exit();
     }
+    setBanner($conn);
     createRoom($conn, $roomName, $roomSubject, $link, $des);
 }
 else{

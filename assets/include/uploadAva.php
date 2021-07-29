@@ -15,7 +15,7 @@ $fileType = $avatar['type'];
 $fileExt = explode('.', $fileName);
 $fileActualExt = strtolower(end($fileExt));
 
-$allowed = array('jpg','jpeg','png');
+$allowed = array('jpg');
 
 if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {

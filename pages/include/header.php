@@ -24,21 +24,13 @@
         <a href="createRoom.php">
             <button>Create Room</button></a>
             <?php
-            $id = $_SESSION["userid"];
-            $id = $_SESSION["userid"];
-            $sql = "SELECT * FROM ava WHERE userId=$id;";
-            $result = mysqli_query($conn, $sql);
             if (!empty($_SESSION["nick"])) {
                 echo "<a href='javascript:void(0);' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
                 echo "<div class='user'>";
-            }
-            else{
-                echo "<a href='login.php'>";
-                echo "<div class='user'>";
-                echo "<p>Log-in!</p>";
-                header("location: login.php");
-            }
+                $id = $_SESSION["userid"];
+            $sql = "SELECT * FROM ava WHERE userId=$id;";
+            $result = mysqli_query($conn, $sql);
             if ($rowAva = mysqli_fetch_assoc($result)) {
                 if ($rowAva['status']==1) {
                     if(file_exists("../assets/upload/profile".$id.".jpg")) {
@@ -52,10 +44,14 @@
             }else {
                 echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
             }
+            }
+            else{
+                echo "<a href='login.php'>";
+                echo "<div class='user'>";
+                echo "<p>Log-in!</p>";
+            }
             echo "</a>"
         ?>
-            
-        
         </div>
         <a href="../assets/include/logout.inc.php" class="exit">
             <img src="../assets/img/Exit.svg" alt="" />

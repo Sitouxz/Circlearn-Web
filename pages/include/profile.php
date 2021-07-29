@@ -18,7 +18,6 @@
                     <div class="top">
                         <div class="user">
 
-                            <!-- isi pop-up manage profile picture dari sini -->
                         <?php
                             $id = $_SESSION["userid"];
                             $sql = "SELECT * FROM ava WHERE userId=$id;";
@@ -39,6 +38,7 @@
                             }
                         ?>
                             <br>
+                            <!-- isi pop-up manage profile picture dari sini -->
                             <form action="../assets/include/uploadAva.php" method="POST" enctype="multipart/form-data">
                             <input type="file" class="input-img" name="avatar" onchange="form.submit()"/>
                             </form>

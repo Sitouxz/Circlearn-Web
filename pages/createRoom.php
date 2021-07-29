@@ -34,12 +34,29 @@
     <link rel="stylesheet" href="../assets/css/createRoom.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script>
+    $(document).ready(function() {
+        $("#show_more").click(function() {
+            $("#room").load("include/more-room.php", {
+                count: count
+            })
+        })
+        $(".searchTerm").click(function() {
+            var searchRoom = $("#search").val();
+            $.post("include/search-room.php", {
+                search: searchRoom
+            }, function(data, status) {
+                $("#room").html(data)
+                $('#show_more').hide();
+            });
+        })
+    })
+    </script>    
 </head>
 
 <body>
     <?php include 'include/header.php'?>
-
-
     <div class="content-header">
         <ul>
             <li class="active"><a href="#">Create Room</a></li>
@@ -48,12 +65,13 @@
     </div>
 
     <div class="croom-container">
-        <div class="cbanner">
-            <div class="banner"></div>
-            <button>Change Banner</button>
-        </div>
+        <form class="cbanner" action="include/uploadBanner.php" method="post" enctype="multipart/form-data">
+            <div class="banner"><img id="roomBanner"></div>
+            <input type="file" class="input-img" name="banner" onchange="form.submit()"/>
+        </form>
 
         <form class="room-info-container" action="../assets/include/createRoom.inc.php" method="post">
+        
             <div class="room-info">
                 <label>
                     <span>Room name</span>
@@ -93,6 +111,13 @@
         } else {
             x.style.display = "block";
         }
+    }
+    function check(){
+
+    }
+    function previewImage(){
+        var previewBox = document.getElementById("roomBanner");
+        previewBox.src = URL.createObjectURL(event.target.files[0]);
     }
     </script>
 </body>
