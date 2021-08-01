@@ -136,8 +136,9 @@
 
   .grid > article img{
   width: 200px;
+  }
 }
-}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -154,6 +155,7 @@
 
   .grid > article img{
   width: 150px;
+  }
 }
 @media (max-width: 350px) {
   .grid {
@@ -167,5 +169,4 @@
   .grid > article img{
   width: 250px;
   }
-
 }
