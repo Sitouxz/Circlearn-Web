@@ -1,5 +1,4 @@
 <?php
-session_start();
 function emptyRoomInput($roomName, $roomSubject, $link){
     if (empty($roomName) || empty($roomSubject) || empty($link)){
         $result = true;
@@ -40,25 +39,18 @@ function createRoom($conn, $roomName, $roomSubject, $link, $des){
     WHERE users.userId='$_SESSION[userid]'
     AND room.roomId='$room[roomId]';";
     mysqli_query($conn,$sql);
-        
-    header("location: ../../pages/mainPage.php?Created=".$roomName."");
-}
-function setBanner($conn){
-    $banner = $_FILES['banner'];
 
-    $Name = $banner['name'];
-    $TmpName = $banner['tmp_name'];
-    $Size = $banner['size'];
-    $Error = $banner['error'];
-    $Type = $banner['type'];
-
-    $Ext = explode('.', $Name);
-    $ActualExt = strtolower(end($Ext));
-
-    $allowed = array('jpg');
+    $sql = "INSERT banner(roomId) VALUES ('$room[roomId]');";
+    mysqli_query($conn,$sql);
     
-                $NameNew = "room".$id.".".$ActualExt;
-                $Destination = '../upload/'.$NameNew;
-                move_uploaded_($TmpName, $Destination);
-                $sql = "UPDATE banner SET status=1 WHERE userId='$id';";
-                mysqli_query($conn,$sql);
+}
+function setBanner($conn,$fileName,$fileTmpName,$roomId){
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $fileNameNew = "banner".$roomId.".".$fileActualExt;
+    $fileDestination = '../upload/'.$fileNameNew;
+    move_uploaded_file($fileTmpName, $fileDestination);
+    $sql = "UPDATE banner SET status='1' WHERE roomId='$roomId';";
+        
+    mysqli_query($conn,$sql);
+}

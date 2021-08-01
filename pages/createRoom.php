@@ -57,11 +57,10 @@
             <label for="file-upload-banner" class="custom-file-upload">
                 <i class="fa fa-cloud-upload"></i> Upload Photo
             </label>
-            <input type="file" id="file-upload-banner" class="input-img" name="banner" onchange="previewImage()"/>
         </form>
-
-        <form class="room-info-container" action="../assets/include/createRoom.inc.php" method="post">
         
+        <form class="room-info-container" action="../assets/include/createRoom.inc.php" method="post" enctype="multipart/form-data">
+                <input type="file" id="file-upload-banner" class="input-img" name="banner" onchange="previewImage()"/>
             <div class="room-info">
                 <label>
                     <span>Room name</span>
@@ -102,8 +101,9 @@
             x.style.display = "block";
         }
     }
-    function check(){
-
+    function previewImage(){
+        var previewBox = document.getElementById("roomBanner");
+        previewBox.src = URL.createObjectURL(event.target.files[0]);
     }
     </script>
 </body>
