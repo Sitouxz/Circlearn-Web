@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT * FROM room LIMIT 4;";
+    $sql = "SELECT * FROM room LIMIT 5;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     if ($resultcheck>0) {
@@ -12,8 +12,7 @@
     }
 ?>
 <script>
-        $(document).ready(function(){
-            $('#show_more').show();
-        })
+$(document).ready(function() {
+    $('#show_more').show();
+})
 </script>
-            

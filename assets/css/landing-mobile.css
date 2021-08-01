@@ -30,16 +30,11 @@
     display: none;
   }
 
-  .avatar {
-    padding: 5px;
-    border-radius: 15px;
-    background-color: #2f2e41;
-  }
-
   .topnav {
     overflow: hidden;
     background-color: #fff;
-    position: relative;
+    position: fixed;
+    width: 100%;
   }
 
   .topnav #myLinks {
@@ -47,7 +42,7 @@
   }
 
   .topnav a {
-    color: var(--dark-color);
+    color: rgb(0, 136, 255);
     padding: 15px 15px;
     text-decoration: none;
     font-size: 16px;
@@ -62,7 +57,7 @@
   }
 
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(255, 0, 0);
     color: black;
   }
 

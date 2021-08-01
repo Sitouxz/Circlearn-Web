@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 
@@ -42,9 +41,9 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
     $(document).ready(function() {
-        var count = 4;
+        var count = 5;
         $("#show_more").click(function() {
-            count = count + 4;
+            count = count + 5;
             $("#room").load("include/more-room.php", {
                 count: count
             })
@@ -86,14 +85,14 @@
     <?php include 'include/footer.php'?>
 
     <script>
-        function myFunction() {
-            var x = document.getElementById("myLinks");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
         }
+    }
     </script>
 </body>
 
