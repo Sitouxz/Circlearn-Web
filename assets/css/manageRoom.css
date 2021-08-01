@@ -63,26 +63,16 @@
 .croom-btn {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
 }
 
 .croom-btn a, .croom-btn button{
     text-decoration: none;
     padding: 5px 25px;
+    margin: 0;
 }
 
-.join {
-    border: 2px solid var(--primary-color);
-    border-radius: 5px;
-    color: var(--primary-color);
-    transition: 0.3s;
-}
-
-.join:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-    transition: 0.3s;
-}
 .edit {
     border: 2px solid orange;
     border-radius: 5px;
@@ -107,4 +97,25 @@
     background-color: tomato;
     color: #fff;
     transition: 0.3s;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .croom-card .banner {
+    width: 258px;
+    height: 120px;
+}
 }

@@ -108,7 +108,7 @@ hr {
   background-color: #f1f1f1;
   border-right: none;
   padding: 5px 15px;
-  height: 20px;
+  height: 30px;
   border-radius: 15px 0 0 15px;
   outline: none;
 }
@@ -167,9 +167,13 @@ hr {
   margin: 0 10px;
 }
 
-.user p {
-  margin: 0 5px 0 10px;
+.right .username {
+  text-decoration: none;
+  color: var(--dark-color);
+  padding: 0 0 0 15px;
+  margin: 0;
 }
+
 
 .user button {
   border: none;
@@ -186,7 +190,7 @@ hr {
     background-color: #f1f1f1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .left img {
     display: none;
   }
@@ -195,12 +199,13 @@ hr {
     display: block;
   }
 
-  .user p {
+  .username {
     display: none;
   }
 
   .wrap {
-    left: 35%;
+    left: 40%;
+    width: 50%;
   }
 
   header {
@@ -237,7 +242,8 @@ hr {
   }
 
   .wrap {
-    left: 30%;
+    left: 40%;
+    width: 50%;
   }
 
   .right {

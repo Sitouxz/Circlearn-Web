@@ -3,6 +3,7 @@
     require_once '../assets/include/dbh.inc.php';
 ?>
 <link rel="stylesheet" href="../assets/css/profile.css" />
+<link rel="stylesheet" href="../assets/css/headerFooter.css" />
 <header>
     <div class="left">
         <a class="logo" href="../pages/mainPage.php">
@@ -25,7 +26,7 @@
             <button>Create Room</button></a>
             <?php
             if (!empty($_SESSION["nick"])) {
-                echo "<a href='javascript:void(0);' onclick='openProfile()'>";
+                echo "<a href='javascript:void(0);' class='username' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
                 echo "<div class='user'>";
                 $id = $_SESSION["userid"];
