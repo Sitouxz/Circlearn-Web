@@ -1,16 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-:root {
-  --primary-color: #00adb5;
-  --secondary-color: #aad8d3;
-  --light-color: #eeeeee;
-  --dark-color: #393e46;
-  --darker-color: #282c31;
-  --primary-darker-color: #001c1e;
-  --gray-color: #bcbcbc;
-  --dark-secondary-color: #2f2e41;
-}
-
+/* 
 @media only screen and (max-width: 1000px) {
   html,
   body {
@@ -96,4 +84,4 @@
     margin: 0;
     padding: 0;
   }
-}
+} */

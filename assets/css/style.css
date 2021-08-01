@@ -508,10 +508,6 @@ textarea {
     width: 80vw;
   }
 
-  .contact-form h1 {
-    font-size: 15vw;
-  }
-
   .contact-form input,
   .contact-form select,
   .contact-form textarea {
@@ -528,5 +524,79 @@ textarea {
 
   .info-container .item h2 {
     font-size: 7vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero .title {
+    font-size: 12px;
+  }
+
+  .features .f-text{
+    width: 300px;
+  }
+
+    .contact-form h1 {
+    font-size: 48px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  header a img {
+    width: 32px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .topnav {
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    position: fixed;
+    width: 80vw;
+    height: 40px;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: var(--dark-color);
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    display: block;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    color: black;
+  }
+
+  header nav {
+    background-color: var(--light-color);
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 70px;
+  }
+
+  header nav ul li:hover {
+    width: 1000%;
+    background-color: #e0e0e0;
+  }
+  header nav ul li a {
+    width: 1000%;
   }
 }

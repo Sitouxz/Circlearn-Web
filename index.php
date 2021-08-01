@@ -38,6 +38,7 @@ With Productive Community of Students." />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/landing-mobile.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
@@ -46,20 +47,16 @@ With Productive Community of Students." />
         <nav>
             <ul id="myLinks">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#info">Info</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
         <div class="button">
             <a href="./pages/login.php" class="login">Join Us!</a>
         </div>
-        <a href="javascript:void(0);" class="icon bar-container" onclick="myFunction();
-        xfunction(this)
-        ">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        <a href="javascript:void(0);" class="icon bar-container" onclick="myFunction();">
+            <i class="fa fa-bars"></i>
         </a>
     </header>
     <div class="hero">
@@ -80,7 +77,7 @@ With Productive Community of Students." />
             </div>
         </div>
     </div>
-    <div class="info">
+    <div class="info" id="info">
         <div class="info-container">
             <div class="item">
                 <img class="vector" src="./assets/img/Info-1.svg" alt="Info" />
@@ -112,13 +109,13 @@ With Productive Community of Students." />
         </div>
     </div>
 
-    <div class="features inverted">
+    <div class="features inverted" id="features">
         <div class="features-container">
             <div class="features-title">
                 <h2>Circlearn</h2>
                 <p>
-                    Join the <b>Circle</b> and learn together <br />
-                    acording to the subjects you are interested in <br />
+                    Join the <b>Circle</b> and learn together
+                    acording to the subjects you are interested in
                     with productive COmmunity of students.
                 </p>
             </div>
@@ -150,9 +147,9 @@ With Productive Community of Students." />
         <div class="f-text">
             <h2>Organized Subjects</h2>
             <p>
-                Circlearn provides facilities to study together in a <br />
-                virtual room that is arranged based on various <br />
-                subjects that can be easily choose acocording to <br />
+                Circlearn provides facilities to study together in a
+                virtual room that is arranged based on various
+                subjects that can be easily choose acocording to
                 your interests
             </p>
             <a href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg" alt="" /></a>
@@ -162,10 +159,10 @@ With Productive Community of Students." />
         <div class="f-text ">
             <h2>Amazing Community</h2>
             <p>
-                Circlearn helps you to be able to study together <br />
-                with people from different backgrounds who have <br />
-                interests in the same subject area as you, who can <br />
-                discuss with you according to the subject you <br />
+                Circlearn helps you to be able to study together
+                with people from different backgrounds who have
+                interests in the same subject area as you, who can
+                discuss with you according to the subject you
                 choose
             </p>
             <a href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg" alt="" /></a>
@@ -185,7 +182,7 @@ With Productive Community of Students." />
             </div>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="contact-container">
             <img class="vector" src="./assets/img/Contact-Vector.svg" alt="" />
             <div class="contact-form">
@@ -230,6 +227,26 @@ With Productive Community of Students." />
         </div>
     </div>
     <script>
+    $(document).ready(function() {
+        $("a").on("click", function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $("html, body").animate({
+                        scrollTop: $(hash).offset().top,
+                    },
+                    800,
+                    function() {
+                        window.location.hash = hash;
+                    }
+                );
+            }
+        });
+    });
+    </script>
+    <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
         if (x.style.display === "block") {
@@ -237,10 +254,6 @@ With Productive Community of Students." />
         } else {
             x.style.display = "block";
         }
-    }
-
-    function xfunction(x) {
-        x.classList.toggle("change");
     }
     </script>
 </body>
