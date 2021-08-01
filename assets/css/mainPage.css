@@ -58,10 +58,21 @@
 }
 
 .grid > article .img-container {
-  background-image: url("../img/card-banner.png");
+  /* background-image: url("../img/card-banner.png"); */
   width: 100%;
   height: 120px;
   border-radius: 20px;
+}
+.banner2 {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  z-index: 1;
+}
+.grid > article .room-id{
+  position: absolute;
+  z-index: 2;
 }
 
 .img-container p {
