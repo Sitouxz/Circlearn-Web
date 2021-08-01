@@ -57,18 +57,30 @@
   transition: 0.3s;
 }
 
-.grid > article .img-container {
-  background-image: url("../img/card-banner.png");
+.grid > article img{
+  object-fit: cover;
+  width: 275px;
+  height: 120px;
+  border-radius: 20px;
+}
+/* .banner2 {
+  position: absolute;
   width: 100%;
   height: 120px;
   border-radius: 20px;
+  z-index: 1;
+} */
+.grid > article .room-id{
+  margin-top: -120px;
+  margin-bottom: 100px;
+  z-index: 999;
 }
 
 .img-container p {
   font-size: 12px;
   padding: 15px;
   margin: 0;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .creator-container {
@@ -113,7 +125,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -121,6 +133,10 @@
   .grid > article {
   width: 200px;
   }
+
+  .grid > article img{
+  width: 200px;
+}
 }
 @media (max-width: 900px) {
   .grid {
@@ -135,6 +151,9 @@
   .grid > article {
   width: 150px;
   }
+
+  .grid > article img{
+  width: 150px;
 }
 @media (max-width: 350px) {
   .grid {
@@ -144,4 +163,9 @@
   .grid > article {
   width: 250px;
   }
+
+  .grid > article img{
+  width: 250px;
+  }
+
 }

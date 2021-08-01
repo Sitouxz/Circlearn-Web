@@ -2,8 +2,16 @@
 <?php
             echo "
             <article>
-            <div class=\"img-container\">
-              <p>".$room['roomId']. " | " .$room['creatorName']."</p>
+            <div class=\"img-container\">";
+            if (file_exists("../assets/upload/banner".$room['roomId'].".jpg")) {
+              echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
+            }else {
+              echo "<img src='../assets/img/card-banner.png' class='banner2'/>";
+            }
+            
+            
+            echo "
+            <p class='room-id'>".$room['roomId']. " | " .$room['creatorName']."</p>
             </div>
             <div class=\"text\">
               <h3>Name</h3>

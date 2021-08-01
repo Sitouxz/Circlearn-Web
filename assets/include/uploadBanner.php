@@ -4,39 +4,38 @@ include_once 'dbh.inc.php';
 
 $id = $_SESSION['userid'];
 
-$avatar = $_FILES['avatar'];
+$banner = $_FILES['banner'];
 
-$fileName = $avatar['name'];
-$fileTmpName = $avatar['tmp_name'];
-$fileSize = $avatar['size'];
-$fileError = $avatar['error'];
-$fileType = $avatar['type'];
+$fileName = $banner['name'];
+$fileTmpName = $banner['tmp_name'];
+$fileSize = $banner['size'];
+$fileError = $banner['error'];
+$fileType = $banner['type'];
 
 $fileExt = explode('.', $fileName);
 $fileActualExt = strtolower(end($fileExt));
 
-$allowed = array('jpg','jpeg','png');
-
-if (in_array($fileActualExt, $allowed)) {
+$allowed = array('jpg');
+print_r($banner);
+/*if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
         if ($fileSize<2580104) {
-            $fileNameNew = "profile".$id.".".$fileActualExt;
-            $fileDestination = '../upload/'.$fileNameNew;
-            move_uploaded_file($fileTmpName, $fileDestination);
-            $sql = "UPDATE ava SET status=1 WHERE userId='$id';";
+            /*$sql = "INSERT INTO banner (status)
+            VALUES (1);";
             mysqli_query($conn,$sql);
-            header("location: ../../pages/mainPage.php");
+            header("location: ../../pages/createRoom.php?success");
+            
+            
         } else {
             echo "Your File is too big!";
-            header("location: ../../pages/mainPage.php?error=tooBig");
+            header("location: ../../pages/createRoom.php?error=tooBig");
         }
     }else {
         echo "Oops! There's an error when uploading your photo!";
-        header("location: ../../pages/mainPage.php?error=true");
+        header("location: ../../pages/createRoom.php?error=true");
     }
 } else {
     echo "File does not supported!";
-    header("location: ../../pages/mainPage.php?error=unsupported");
-}
+    header("location: ../../pages/createRoom.php?error=unsupported");
+}*/
 ?>
-userId=1 AND 

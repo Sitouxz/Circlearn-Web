@@ -39,7 +39,6 @@
 
 <body>
     <?php include 'include/header.php'?>
-
     <div class="details-container">
         <div class="banner">
             <p>1 | Jokowi</p>

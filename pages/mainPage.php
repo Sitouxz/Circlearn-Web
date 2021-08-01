@@ -43,7 +43,7 @@
     $(document).ready(function() {
         var count = 5;
         $("#show_more").click(function() {
-            count = count + 5;
+            count = count + 10;
             $("#room").load("include/more-room.php", {
                 count: count
             })

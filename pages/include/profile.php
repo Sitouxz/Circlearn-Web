@@ -16,8 +16,6 @@
             <div class="profile-content" id="basic">
                 <div class="top">
                     <div class="user">
-
-                        <!-- isi pop-up manage profile picture dari sini -->
                         <?php
                             $id = $_SESSION["userid"];
                             $sql = "SELECT * FROM ava WHERE userId=$id;";
@@ -33,19 +31,19 @@
                                         mysqli_query($conn,$sql);
                                     }
                                 }
-                            }else {
-                                echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                                else {
+                                    echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                                }
                             }
                         ?>
                         <br>
                         <form action="../assets/include/uploadAva.php" method="POST" enctype="multipart/form-data">
-                            <label for="file-upload" class="custom-file-upload">
+                            <label for="file-upload-ava" class="custom-file-upload">
                                 <i class="fa fa-cloud-upload"></i> Upload Photo
                             </label>
-                            <input id="file-upload" type="file" class="input-img" name="avatar"
+                            <input id="file-upload-ava" type="file" class="input-img" name="avatar"
                                 onchange="form.submit()" />
                         </form>
-                        <!-- sampe sini -->
                         <br>
                         <div class="user-name">
                             <h4>Name</h4>
@@ -80,8 +78,8 @@
                             }
                         ?>" placeholder="....">
                     </div>
-                </div>
                 <button id="save-info" class="about-button">Save</button>
+                </div>
             </div>
 
             <div class="bookmarks-content" id="bookmarks">

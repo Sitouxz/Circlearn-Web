@@ -49,7 +49,11 @@
   height: 120px;
   border-radius: 20px;
 }
-
+#roomBanner{
+  width: 358px;
+  height: 120px;
+  border-radius: 20px;
+}
 .cbanner button {
   text-decoration: none;
   font-family: "Poppins", sans-serif;

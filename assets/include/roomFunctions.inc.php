@@ -1,5 +1,4 @@
 <?php
-session_start();
 function emptyRoomInput($roomName, $roomSubject, $link){
     if (empty($roomName) || empty($roomSubject) || empty($link)){
         $result = true;
@@ -40,6 +39,18 @@ function createRoom($conn, $roomName, $roomSubject, $link, $des){
     WHERE users.userId='$_SESSION[userid]'
     AND room.roomId='$room[roomId]';";
     mysqli_query($conn,$sql);
+
+    $sql = "INSERT banner(roomId) VALUES ('$room[roomId]');";
+    mysqli_query($conn,$sql);
+    
+}
+function setBanner($conn,$fileName,$fileTmpName,$roomId){
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $fileNameNew = "banner".$roomId.".".$fileActualExt;
+    $fileDestination = '../upload/'.$fileNameNew;
+    move_uploaded_file($fileTmpName, $fileDestination);
+    $sql = "UPDATE banner SET status='1' WHERE roomId='$roomId';";
         
-    header("location: ../../pages/mainPage.php?Created=".$roomName."");
+    mysqli_query($conn,$sql);
 }

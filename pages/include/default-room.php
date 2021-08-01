@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT * FROM room LIMIT 5;";
+    $sql = "SELECT * FROM room LIMIT 10;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     if ($resultcheck>0) {
