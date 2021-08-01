@@ -38,10 +38,10 @@
                         ?>
                         <br>
                         <form action="../assets/include/uploadAva.php" method="POST" enctype="multipart/form-data">
-                            <label for="file-upload" class="custom-file-upload">
+                            <label for="file-upload-ava" class="custom-file-upload">
                                 <i class="fa fa-cloud-upload"></i> Upload Photo
                             </label>
-                            <input id="file-upload" type="file" class="input-img" name="avatar"
+                            <input id="file-upload-ava" type="file" class="input-img" name="avatar"
                                 onchange="form.submit()" />
                         </form>
                         <br>

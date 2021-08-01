@@ -20,7 +20,10 @@ $allowed = array('jpg');
 if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
         if ($fileSize<2580104) {
-            echo true;
+            $sql = "INSERT INTO banner (status)
+            VALUES (1);";
+            mysqli_query($conn,$sql);
+            header("location: ../../pages/createRoom.php?success");
         } else {
             echo "Your File is too big!";
             header("location: ../../pages/createRoom.php?error=tooBig");
