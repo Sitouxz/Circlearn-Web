@@ -41,9 +41,9 @@
                         $sql = "UPDATE ava SET status=0 WHERE userId='$id';";
                         mysqli_query($conn,$sql);
                     }
+                }else {
+                    echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
                 }
-            }else {
-                echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
             }
             }
             else{

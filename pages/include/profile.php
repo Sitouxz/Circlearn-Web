@@ -16,7 +16,6 @@
             <div class="profile-content" id="basic">
                 <div class="top">
                     <div class="user">
-
                         <?php
                             $id = $_SESSION["userid"];
                             $sql = "SELECT * FROM ava WHERE userId=$id;";
@@ -32,8 +31,9 @@
                                         mysqli_query($conn,$sql);
                                     }
                                 }
-                            }else {
-                                echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                                else {
+                                    echo "<img class='avatar' src='../assets/img/profile-picture.png'>";
+                                }
                             }
                         ?>
                         <br>
@@ -44,21 +44,11 @@
                             <input id="file-upload" type="file" class="input-img" name="avatar"
                                 onchange="form.submit()" />
                         </form>
-                        <!-- sampe sini -->
                         <br>
                         <div class="user-name">
                             <h4>Name</h4>
                             <br>
-                            <!-- isi pop-up manage profile picture dari sini -->
-                            <form action="../assets/include/uploadAva.php" method="POST" enctype="multipart/form-data">
-                            <input type="file" class="input-img" name="avatar" onchange="form.submit()"/>
-                            </form>
-                            <!-- sampe sini -->
-                            <br>
-                            <div class="user-name">
-                                <h4>Name</h4>
-                                <br>
-                                <?php echo"               
+                            <?php echo"               
                                 <p>".$_SESSION["nick"]."</p>
                                 "?>
                         </div>
@@ -88,8 +78,8 @@
                             }
                         ?>" placeholder="....">
                     </div>
-                </div>
                 <button id="save-info" class="about-button">Save</button>
+                </div>
             </div>
 
             <div class="bookmarks-content" id="bookmarks">
