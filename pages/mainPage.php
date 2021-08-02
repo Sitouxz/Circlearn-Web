@@ -39,32 +39,32 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-    $(document).ready(function() {
-        var count = 5;
-        $("#show_more").click(function() {
-            count = count + 10;
-            $("#room").load("include/more-room.php", {
-                count: count
-            })
-        })
-        $(".searchTerm").keyup(function() {
-            var searchRoom = $("#search").val();
-            $.post("include/search-room.php", {
-                search: searchRoom
-            }, function(data, status) {
-                $("#room").html(data)
-                $('#show_more').hide();
-            });
-        })
-        $("#save-info").click(function() {
-            var about = $("#about").val();
-            $.post("include/updateAbout.php", {
-                about: about
-            });
+<script>
+$(document).ready(function() {
+    var count = 5;
+    $("#show_more").click(function() {
+        count = count + 10;
+        $("#room").load("include/more-room.php", {
+            count: count
         })
     })
-    </script>
+    $(".searchTerm").keyup(function() {
+        var searchRoom = $("#search").val();
+        $.post("include/search-room.php", {
+            search: searchRoom
+        }, function(data, status) {
+            $("#room").html(data)
+            $('#show_more').hide();
+        });
+    })
+    $("#save-info").click(function() {
+        var about = $("#about").val();
+        $.post("include/updateAbout.php", {
+            about: about
+        });
+    })
+})
+</script>
 </head>
 
 <body>
@@ -73,9 +73,22 @@
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
+            <label>Sort</label>
+            <form method="get">
+            <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
+                <label for="newest" >Newest</label>
+            <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
+                <label for="oldest">Oldest</label>
+            </form>
+            <?php
+                $order = "ORDER BY timeCreated DESC";
+                if ($_GET["sort"] == "oldest") {
+                    $order = "ORDER BY timeCreated ASC";
+                }
+            ?>
             <div class="grid" id="room">
-                <?php   
-              include 'include/default-room.php';
+            <?php
+                include 'include/default-room.php';
             ?>
             </div>
             <button id="show_more">Show more!</button>

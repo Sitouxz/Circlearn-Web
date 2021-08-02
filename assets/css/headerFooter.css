@@ -170,10 +170,12 @@ hr {
 .right .username {
   text-decoration: none;
   color: var(--dark-color);
-  padding: 0 0 0 15px;
-  margin: 0;
+  margin: 0 0 0 15px;
 }
-
+.right .exit {
+  display: block;
+  margin: 16px 0 16px 10px;
+}
 
 .user button {
   border: none;

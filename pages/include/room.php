@@ -3,14 +3,7 @@
             
             echo "
             <article>
-            <div class=\"img-container\">";
-            /*if (file_exists("../assets/upload/banner".$room['roomId'].".jpg")) {
-              echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
-            }else {
-              echo "<img src='../assets/img/card-banner.png' class='banner2'/>";
-            }*/
-
-            if ($room['status'] == 1) {
+            <div class=\"img-container\">";if ($room['status'] == 1) {
               echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
             }else {
               echo "<img src='../assets/img/card-banner.png' class='banner2'/>";

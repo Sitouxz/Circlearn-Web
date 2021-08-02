@@ -1,5 +1,4 @@
 <?php
-    //$sort = ['roomSort'];
     $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
     FROM (((`_create` 
         RIGHT JOIN room ON _create.roomId = room.roomId) 
