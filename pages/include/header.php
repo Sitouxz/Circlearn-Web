@@ -3,7 +3,21 @@
     require_once '../assets/include/dbh.inc.php';
 ?>
 <link rel="stylesheet" href="../assets/css/profile.css" />
+    <link rel="stylesheet" href="../assets/css/mainPage.css" />
 <link rel="stylesheet" href="../assets/css/headerFooter.css" />
+<script>
+    $(document).ready(function() {
+        $(".searchButton").click(function() {
+        var searchRoom = $("#search").val();
+        $.post("searchRoom.php", {
+            search: searchRoom
+        }, function(data, status) {
+            $("#room").html(data)
+            $('#show_more').hide();
+        });
+        })
+    })
+</script>
 <header>
     <div class="left">
         <a class="logo" href="../pages/mainPage.php">
@@ -14,12 +28,12 @@
         </a>
     </div>
     <div class="wrap">
-        <div class="search">
-            <input type="search" class="searchTerm" placeholder="Search room" id="search" />
+        <form action="searchRoom.php" method="POST" class="search">
+            <input type="search" class="searchTerm" placeholder="Search room" id="search" name="search"/>
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
-        </div>
+        </form>
     </div>
     <div class="right">
         <a href="createRoom.php">

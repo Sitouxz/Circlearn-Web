@@ -39,26 +39,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
-        var count = 10;
-        $("#show_more").click(function() {
-            count = count + 10;
-            $("#room").load("include/moreRoom.php", {
-                count: count
-            })
-        })
-/*        $(".searchTerm").keyup(function() {
-        var searchRoom = $("#search").val();
-        $.post("searchRoom.php", {
-            search: searchRoom
-        }, function(data, status) {
-            $("#room").html(data)
-            $('#show_more').hide();
-        });
-        })*/
-    })
-</script>
 </head>
 
 <body>
@@ -74,36 +54,61 @@
             <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
                 <label for="oldest">Oldest</label>
             </form>
-            <?php
-                $order = "ORDER BY timeCreated DESC";
-                if (isset($_GET['sort'])) {
-                    if ($_GET['sort'] == "oldest") {
-                        $order = "ORDER BY timeCreated ASC";
-                    }$_SESSION['sort'] = $_GET['sort'];
-                }
-                
-            ?>
             <div class="grid" id="room">
-                <?php
-                    include 'include/defaultRoom.php';
-                ?>
-            </div>
-            <button id="show_more">Show more!</button>
-        </div>
-    </section>
-
-    <?php include 'include/footer.php'?>
-
-    <script>
-    function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
+            <?php
+        $order = "ORDER BY timeCreated DESC";
+        $sort = $_SESSION['sort'];
+        if ($_SESSION['sort'] == "oldest") {
+            $order = "ORDER BY timeCreated ASC";
+        }
+    $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
+    FROM (((`_create` 
+        RIGHT JOIN room ON _create.roomId = room.roomId) 
+        LEFT JOIN users ON _create.userId = users.userId)
+        LEFT JOIN banner ON room.roomId = banner.roomId) 
+        $order;";
+    $result = mysqli_query($conn,$sql);
+    $room = mysqli_fetch_assoc($result);
+if(isset($_POST['search'])){
+    $emptySearch = 0;
+    $search = $_POST['search'];
+    if (!empty($search)) {
+        do{
+            if (strpos($room['roomName'], $search)!==false){
+                include 'include/room.php';
+                $emptySearch++;
+            }
+            //nanti mo kase pisah mana hasil search by roomId dan mana yang hasil search by roomName
+            //nanti mo tambah hasil search by Subject
+            else if ($room['roomId'] === $search){
+                include 'include/room.php';
+                $emptySearch++;
+            }
+        }while ($room = mysqli_fetch_assoc($result));
+        if ($emptySearch==0) {
+            echo "<h2>Room not Found!</h2>";
         }
     }
-    </script>
+}
+else {
+    echo "<h2>Empty!</h2>";
+}
+?>
+</div>
+</div>
+</section>
+<?php include 'include/footer.php'?>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
 </body>
 
 </html>

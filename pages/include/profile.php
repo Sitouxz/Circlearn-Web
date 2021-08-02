@@ -11,8 +11,6 @@
             </ul>
         </div>
         <div class="content-side">
-
-
             <div class="profile-content" id="basic">
                 <div class="top">
                     <div class="user">
@@ -48,23 +46,23 @@
                         <div class="user-name">
                             <h4>Name</h4>
                             <br>
-                            <?php echo"               
+                            <?php echo"   
                                 <p>".$_SESSION["nick"]."</p>
                                 "?>
                         </div>
                     </div>
                     <div class='user-info'>
-                        <h4>Gender</h4>
-                        <?php
-        echo"            <p>".$_SESSION["gender"]."</p>";
-        echo"            <h4>Age</h4>";
-        echo"            <p>18</p>";
-        echo"            <h4>Email</h4>";
-        echo"            <p>".$_SESSION["email"]."</p>";
-        // echo"            <h4>Phone Number</h4>";
-        // echo"            <p>08123456789</p>";
-        echo"           <br>";
-        echo"           <button>Edit Profile</button>";
+                    <h4>Gender</h4>
+                    <?php
+                    echo"<p>".$_SESSION["gender"]."</p>";
+                    echo"<h4>Age</h4>";
+                    echo"<p>18</p>";
+                    echo"<h4>Email</h4>";
+                    echo"<p>".$_SESSION["email"]."</p>";
+                    // echo"<h4>Phone Number</h4>";
+                    // echo"<p>08123456789</p>";
+                    echo"<br>";
+                    echo"<button>Edit Profile</button>";
                     ?>
                     </div>
                 </div>
@@ -81,70 +79,11 @@
                 <button id="save-info" class="about-button">Save</button>
                 </div>
             </div>
-
+ 
             <div class="history-content" id="history">
-                <div class="history-card-container">
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                    <div class="history-card">
-                        <div class="banner">
-                            <p>1 | Jokowi</p>
-                        </div>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
+            <div class="grid" id="room">
+                <?php include 'historyRoom.php'; ?>
+            </div>
             </div>
         </div>
     </div>
@@ -191,4 +130,12 @@ function history() {
     x.style.display = "none";
     z.style.display = "block";
 }
+$(document).ready(function() {
+        $("#save-info").click(function() {
+            var about = $("#about").val();
+            $.post("include/updateAbout.php", {
+                about: about
+            });
+        })
+    })
 </script>
