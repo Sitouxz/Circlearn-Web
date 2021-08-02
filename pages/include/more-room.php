@@ -2,7 +2,13 @@
 require_once '../../assets/include/dbh.inc.php';
 
     $count = $_POST['count'];
-    $sql = "SELECT * FROM room LIMIT $count;";
+    $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
+    FROM (((`_create` 
+        RIGHT JOIN room ON _create.roomId = room.roomId) 
+        LEFT JOIN users ON _create.userId = users.userId)
+        LEFT JOIN banner ON room.roomId = banner.roomId) 
+        ORDER BY timeCreated DESC
+        LIMIT $count;";
     $result = mysqli_query($conn, $sql);
     $resultcheck = mysqli_num_rows($result);
     if ($resultcheck>0) {

@@ -27,6 +27,10 @@ function createRoom($conn, $roomName, $roomSubject, $link, $des){
     
     $sql = "INSERT INTO room (roomName,roomSubject,link,des) VALUES ('$roomName', '$roomSubject', '$link', '$des');";
     mysqli_query($conn,$sql);
+
+    $sql = "INSERT room(creatorId) VALUES ('$_SESSION[userid]');";
+    mysqli_query($conn,$sql);
+
     $room = roomExists($conn,$roomName);
         if($room === false){
             header("location: ../../pages/login.php?error=emptyInfo");

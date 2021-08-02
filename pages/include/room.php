@@ -1,9 +1,16 @@
 
 <?php
+            
             echo "
             <article>
             <div class=\"img-container\">";
-            if (file_exists("../assets/upload/banner".$room['roomId'].".jpg")) {
+            /*if (file_exists("../assets/upload/banner".$room['roomId'].".jpg")) {
+              echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
+            }else {
+              echo "<img src='../assets/img/card-banner.png' class='banner2'/>";
+            }*/
+
+            if ($room['status'] == 1) {
               echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
             }else {
               echo "<img src='../assets/img/card-banner.png' class='banner2'/>";
@@ -11,7 +18,7 @@
             
             
             echo "
-            <p class='room-id'>".$room['roomId']. " | " .$room['creatorName']."</p>
+            <p class='room-id'>".$room['roomId']. " | " .$room['userName']."</p>
             </div>
             <div class=\"text\">
               <h3>Name</h3>
