@@ -52,8 +52,8 @@
                         </div>
                     </div>
                     <div class='user-info'>
-                    <h4>Gender</h4>
-                    <?php
+                        <h4>Gender</h4>
+                        <?php
                     echo"<p>".$_SESSION["gender"]."</p>";
                     echo"<h4>Age</h4>";
                     echo"<p>18</p>";
@@ -76,14 +76,14 @@
                             }
                         ?>" placeholder="....">
                     </div>
-                <button id="save-info" class="about-button">Save</button>
+                    <button id="save-info" class="about-button">Save</button>
                 </div>
             </div>
- 
+
             <div class="history-content" id="history">
-            <div class="grid" id="room">
-                <?php include 'historyRoom.php'; ?>
-            </div>
+                <div class="grid" id="room">
+                    <?php include 'historyRoom.php'; ?>
+                </div>
             </div>
         </div>
     </div>
@@ -131,11 +131,11 @@ function history() {
     z.style.display = "block";
 }
 $(document).ready(function() {
-        $("#save-info").click(function() {
-            var about = $("#about").val();
-            $.post("include/updateAbout.php", {
-                about: about
-            });
-        })
+    $("#save-info").click(function() {
+        var about = $("#about").val();
+        $.post("include/updateAbout.php", {
+            about: about
+        });
     })
+})
 </script>

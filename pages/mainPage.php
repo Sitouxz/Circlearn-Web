@@ -39,7 +39,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
+    <script>
     $(document).ready(function() {
         var count = 10;
         $("#show_more").click(function() {
@@ -48,17 +48,17 @@
                 count: count
             })
         })
-/*        $(".searchTerm").keyup(function() {
-        var searchRoom = $("#search").val();
-        $.post("searchRoom.php", {
-            search: searchRoom
-        }, function(data, status) {
-            $("#room").html(data)
-            $('#show_more').hide();
-        });
-        })*/
+        /*        $(".searchTerm").keyup(function() {
+                var searchRoom = $("#search").val();
+                $.post("searchRoom.php", {
+                    search: searchRoom
+                }, function(data, status) {
+                    $("#room").html(data)
+                    $('#show_more').hide();
+                });
+                })*/
     })
-</script>
+    </script>
 </head>
 
 <body>
@@ -67,11 +67,11 @@
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
-            <label>Sort</label>
+            <label>Sort room by</label>
             <form method="get">
-            <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
-                <label for="newest" >Newest</label>
-            <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
+                <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
+                <label for="newest">Newest</label>
+                <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
                 <label for="oldest">Oldest</label>
             </form>
             <?php

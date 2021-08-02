@@ -558,6 +558,7 @@ textarea {
     position: fixed;
     width: 80vw;
     height: 40px;
+    z-index: 999;
   }
 
   .topnav #myLinks {

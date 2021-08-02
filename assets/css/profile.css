@@ -1,6 +1,6 @@
 
 .profile-popup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -9,6 +9,8 @@
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
   display: none;
   background-color: #fff;
+  z-index: 9999;
+  width: 615px;
 }
 
 .close-btn a i {
@@ -46,6 +48,8 @@
   text-decoration: none;
   color: var(--dark-color);
   line-height: 2;
+  display: block;
+  width: 200%;
 }
 
 .active {
@@ -153,6 +157,7 @@ input[type="file"] {
   margin-top: 22px;
   margin-bottom: 15px;
   float: right;
+  cursor: pointer;
 }
 
 .bookmarks-content {
@@ -212,4 +217,21 @@ input[type="file"] {
 }
 #history{
   display: none;
+  overflow-y: scroll;
+  height: 390px;
+  margin-bottom: 16px;
+}
+
+#history .grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+
+#history article img {
+  width: 200px;
+}
+
+#history article {
+  width: 200px;
+  margin: 5px;
 }

@@ -49,13 +49,13 @@
             <h1>ROOMS</h1>
             <label>Sort</label>
             <form method="get">
-            <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
-                <label for="newest" >Newest</label>
-            <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
+                <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
+                <label for="newest">Newest</label>
+                <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
                 <label for="oldest">Oldest</label>
             </form>
             <div class="grid" id="room">
-            <?php
+                <?php
         $order = "ORDER BY timeCreated DESC";
         $sort = $_SESSION['sort'];
         if ($_SESSION['sort'] == "oldest") {
@@ -86,7 +86,7 @@ if(isset($_POST['search'])){
             }
         }while ($room = mysqli_fetch_assoc($result));
         if ($emptySearch==0) {
-            echo "<h2>Room not Found!</h2>";
+            echo "<h2 class='notfound'>Room not Found!</h2>";
         }
     }
 }
@@ -94,21 +94,21 @@ else {
     echo "<h2>Empty!</h2>";
 }
 ?>
-</div>
-</div>
-</section>
-<?php include 'include/footer.php'?>
+            </div>
+        </div>
+    </section>
+    <?php include 'include/footer.php'?>
 
-<script>
-function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
     }
-}
-</script>
+    </script>
 </body>
 
 </html>
