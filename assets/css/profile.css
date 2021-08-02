@@ -155,10 +155,10 @@ input[type="file"] {
   float: right;
 }
 
-.bookmarks-content {
+.history-content {
   display: none;
 }
-.bookmarks-card-container {
+.history-card-container {
   display: flex;
   flex-wrap: wrap;
   margin-left: 40px;
@@ -166,13 +166,13 @@ input[type="file"] {
   height: 400px;
 }
 
-.bookmarks-card {
+.history-card {
   margin: 0;
   padding: 0;
   margin: 10px;
 }
 
-.bookmarks-card .banner {
+.history-card .banner {
     background-image: url("../../assets/img/card-banner.png");
     width: 258px;
     height: 120px;

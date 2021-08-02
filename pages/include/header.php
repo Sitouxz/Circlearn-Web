@@ -45,13 +45,12 @@
                     echo "<img class='avatar-mini' src='../assets/img/profile-picture.png' alt='User' />";
                 }
             }
-            }
-            else{
+            }else{
                 echo "<a href='login.php'>";
                 echo "<div class='user'>";
                 echo "<p>Log-in!</p>";
             }
-            echo "</a>"
+            echo "</a>";
         ?>
         </div>
         <a href="../assets/include/logout.inc.php" class="exit">

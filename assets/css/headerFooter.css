@@ -170,7 +170,7 @@ hr {
 .right .username {
   text-decoration: none;
   color: var(--dark-color);
-  margin: 0 0 0 15px;
+  padding: 0 0 0 15px;
 }
 .right .exit {
   display: block;

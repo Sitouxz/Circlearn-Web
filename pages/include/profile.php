@@ -6,7 +6,7 @@
         <div class="profile-nav">
             <ul>
                 <li><a href="javascript:void(0);" onclick="basicInfo()">Basic Info</a></li>
-                <li><a href="javascript:void(0);" onclick="bookmarks()">Bookmarks</a></li>
+                <li><a href="javascript:void(0);" onclick="history()">history</a></li>
                 <li class="logout"><a href="../assets/include/logout.inc.php">Log out</a></li>
             </ul>
         </div>
@@ -82,63 +82,63 @@
                 </div>
             </div>
 
-            <div class="bookmarks-content" id="bookmarks">
-                <div class="bookmarks-card-container">
-                    <div class="bookmarks-card">
+            <div class="history-content" id="history">
+                <div class="history-card-container">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
                         <button class="delete">Delete</button>
                     </div>
-                    <div class="bookmarks-card">
+                    <div class="history-card">
                         <div class="banner">
                             <p>1 | Jokowi</p>
                         </div>
@@ -180,14 +180,14 @@ function profilePopup() {
 
 function basicInfo() {
     var x = document.getElementById("basic");
-    var z = document.getElementById("bookmarks");
+    var z = document.getElementById("history");
     x.style.display = "block";
     z.style.display = "none";
 }
 
-function bookmarks() {
+function history() {
     var x = document.getElementById("basic");
-    var z = document.getElementById("bookmarks");
+    var z = document.getElementById("history");
     x.style.display = "none";
     z.style.display = "block";
 }

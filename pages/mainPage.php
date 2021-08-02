@@ -50,7 +50,7 @@ $(document).ready(function() {
     })
     $(".searchTerm").keyup(function() {
         var searchRoom = $("#search").val();
-        $.post("include/search-room.php", {
+        $.post("include/searchRoom.php", {
             search: searchRoom
         }, function(data, status) {
             $("#room").html(data)
@@ -82,13 +82,16 @@ $(document).ready(function() {
             </form>
             <?php
                 $order = "ORDER BY timeCreated DESC";
-                if ($_GET["sort"] == "oldest") {
-                    $order = "ORDER BY timeCreated ASC";
+                if (isset($_GET['sort'])) {
+                    if ($_GET['sort'] == "oldest") {
+                        $order = "ORDER BY timeCreated ASC";
+                    }
                 }
+                $_SESSION['sort'] = $_GET['sort'];
             ?>
             <div class="grid" id="room">
             <?php
-                include 'include/default-room.php';
+                include 'include/defaultRoom.php';
             ?>
             </div>
             <button id="show_more">Show more!</button>
