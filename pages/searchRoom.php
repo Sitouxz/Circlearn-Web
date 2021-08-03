@@ -47,7 +47,7 @@
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
-            <label>Sort</label>
+            <label>Sort room by</label>
             <form method="get">
                 <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
                 <label for="newest">Newest</label>
@@ -69,9 +69,9 @@
         $order;";
     $result = mysqli_query($conn,$sql);
     $room = mysqli_fetch_assoc($result);
-if(isset($_POST['search'])){
+if(isset($_GET['search'])){
     $emptySearch = 0;
-    $search = $_POST['search'];
+    $search = $_GET['search'];
     if (!empty($search)) {
         do{
             if (strpos($room['roomName'], $search)!==false){
@@ -85,13 +85,13 @@ if(isset($_POST['search'])){
                 $emptySearch++;
             }
         }while ($room = mysqli_fetch_assoc($result));
-        if ($emptySearch==0) {
+        if ($emptySearch == 0) {
             echo "<h2 class='notfound'>Room not Found!</h2>";
         }
     }
 }
-else {
-    echo "<h2>Empty!</h2>";
+if (empty($_GET['search']) ) {
+    include 'include/defaultRoom.php';
 }
 ?>
             </div>

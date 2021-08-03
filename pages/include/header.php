@@ -28,7 +28,7 @@
         </a>
     </div>
     <div class="wrap">
-        <form action="searchRoom.php" method="POST" class="search">
+        <form action="searchRoom.php" method="GET" class="search">
             <input type="search" class="searchTerm" placeholder="Search room" id="search" name="search"/>
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
