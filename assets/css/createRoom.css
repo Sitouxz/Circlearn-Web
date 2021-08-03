@@ -43,11 +43,8 @@
   height: 200px;
 }
 
-.cbanner .banner {
-  background-image: url("../img/card-banner.png");
-  width: 358px;
-  height: 120px;
-  border-radius: 20px;
+.cbanner .banner img {
+  object-fit: cover;
 }
 #roomBanner{
   width: 358px;

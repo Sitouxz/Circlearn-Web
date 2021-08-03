@@ -18,6 +18,8 @@ body {
   box-sizing: border-box;
   line-height: 1;
   font-family: "Poppins", sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
 header {
@@ -262,6 +264,10 @@ hr {
 /* FOOTER */
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
   margin-top: 200px;
   width: 100%;
 }

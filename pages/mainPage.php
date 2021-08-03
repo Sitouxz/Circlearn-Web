@@ -67,13 +67,23 @@
     <section>
         <div class="card-container">
             <h1>ROOMS</h1>
-            <label>Sort room by</label>
-            <form method="get">
-                <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
-                <label for="newest">Newest</label>
-                <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
-                <label for="oldest">Oldest</label>
-            </form>
+            <div class="sort">
+                <div class="sort-content">
+                    <div class="text">
+                        <p>Sort room by</p>
+                    </div>
+                    <div class="form">
+                        <form method="get">
+                            <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()"
+                                onclick="check()">
+                            <label for="newest">Newest</label>
+                            <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()"
+                                onclick="check()">
+                            <label for="oldest">Oldest</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <?php
                 $order = "ORDER BY timeCreated DESC";
                 if (isset($_GET['sort'])) {
@@ -102,6 +112,14 @@
         } else {
             x.style.display = "block";
         }
+    }
+
+    function check() {
+        document.getElementById("red").checked = true;
+    }
+
+    function uncheck() {
+        document.getElementById("red").checked = false;
     }
     </script>
 </body>
