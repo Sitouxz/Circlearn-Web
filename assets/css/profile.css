@@ -10,7 +10,6 @@
   display: none;
   background-color: #fff;
   z-index: 9999;
-  width: 615px;
 }
 
 .close-btn a i {
@@ -234,4 +233,7 @@ input[type="file"] {
 #history article {
   width: 200px;
   margin: 5px;
+}
+.history-content .grid{
+  margin: 0 15px 0 15px;
 }
