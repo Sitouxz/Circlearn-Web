@@ -6,16 +6,15 @@
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $repwd = $_POST["repwd"];
+    $dob = $_POST["dob"];
+    $gender = $_POST["gender"];
+    
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
     if (emptyInputSignup($username,$email,$pwd,$repwd) !== false ) {
         header("location: ../../pages/login.php?error=emptyinput");
-        exit();
-    }
-    if (invalidUid($username) !== false ) {
-        header("location: ../../pages/login.php?error=invalidusername");
         exit();
     }
     if (invalidEmail($email) !== false ) {
@@ -31,7 +30,7 @@
         exit();
     }
 
-    createUser($conn, $username, $email, $pwd);
+    createUser($conn, $username, $email, $pwd, $dob, $gender);
     
     setAva($conn, $username);
 

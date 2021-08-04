@@ -11,15 +11,6 @@ function emptyInputSignup($username,$email,$pwd,$repwd){
 
     return $result;
 }
-function invalidUid($username){
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        $result = true;
-    }
-    else {
-        $result = false;
-    }
-    return $result;
-}
 function invalidEmail($email){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
@@ -61,8 +52,8 @@ function uidExists($conn, $email, $username){
 
     mysqli_stmt_close($stmt);
 }
-function createUser($conn, $username, $email, $pwd){
-    $sql = "INSERT INTO users (userName,userEmail,userPwd) VALUES (?, ?, ?);";
+function createUser($conn, $username, $email, $pwd, $dob, $gender){
+    $sql = "INSERT INTO users (userName,userEmail,userPwd,Birth,gender) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../../pages/login.php?error=stmtfailed");
@@ -70,7 +61,7 @@ function createUser($conn, $username, $email, $pwd){
     }
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sssss", $username, $email, $hashedPwd, $dob, $gender);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 }

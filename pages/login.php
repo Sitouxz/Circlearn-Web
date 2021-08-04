@@ -77,13 +77,13 @@
           <label>
             <span>Gender</span>
             <div class="gender">
-              <input type="radio" name="gender" /> Male
-              <input type="radio" name="gender" /> Female
+              <input type="radio" name="gender" value="Male"/> Male
+              <input type="radio" name="gender" value="Female"/> Female
             </div>
           </label>
           <label>
-              <span>Password</span>
-              <input type="password" name="pwd"/>
+              <span>Date of Birth</span>
+              <input type="date" name="dob"/>
             </label>
           <div class="password">
             <label>
