@@ -16,7 +16,18 @@
             $('#show_more').hide();
         });
         })
+        /*$('#join').click(function() {
+            $.ajax({
+            url: 'include/joinRoom.php',
+            success: function(data) {
+                window.location.href = data;
+            }
+            });
+        })*/
     })
+    function otw(link){
+        window.location.href = link;
+    }
 </script>
 <header>
     <div class="left">

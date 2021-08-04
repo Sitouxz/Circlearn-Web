@@ -60,7 +60,7 @@
         </form>
         
         <form class="room-info-container" action="../assets/include/createRoom.inc.php" method="post" enctype="multipart/form-data">
-                <input type="file" id="file-upload-banner" class="input-img" name="banner" onchange="previewImage()"/>
+                <input type="file" id="file-upload-banner" class="input-img" name="banner" onchange="previewImage()" accept=".jpg"/>
             <div class="room-info">
                 <label>
                     <span>Room name</span>

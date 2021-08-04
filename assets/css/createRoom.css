@@ -47,10 +47,17 @@
   object-fit: cover;
 }
 #roomBanner{
-  width: 358px;
-  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 258px;
+  width: 500px;
+  height: 170px;
   border-radius: 20px;
+  background-image: url("../img/card-banner.png");
+  margin-bottom: 15px;
 }
+.custom-file-upload
 .cbanner button {
   text-decoration: none;
   font-family: "Poppins", sans-serif;

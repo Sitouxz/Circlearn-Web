@@ -98,6 +98,7 @@
                 width: 200px;
                 grid-area: overlap;
                 border-radius: 20px 20px 0px 0px;
+                height: inherit;
                 }
 
                 #history article {
@@ -148,7 +149,7 @@
                 .img-container h1 {
                     color: white;
                     text-align: center;
-                    margin-block-start: 2.2em;
+                    margin-block-start: 1.5em;
                     margin-block-end: 0;
                 }
                 .img-container .bg-shadow p {
@@ -160,6 +161,7 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr;
                 grid-template-areas: "overlap";
+                height: 90px;
                 }
                 .history-card .room-id{
                 grid-area: overlap;

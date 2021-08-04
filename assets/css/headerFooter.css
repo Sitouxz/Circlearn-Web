@@ -153,6 +153,7 @@ hr {
   padding: 3px 25px;
   font-family: "Poppins", sans-serif;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .right button:hover {

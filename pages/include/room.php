@@ -28,7 +28,11 @@
               }
               echo "
               </p>
-              <a href=\"".$room['link']."\"><button>Join!</button></a>
+              <form method='POST' action='include/joinRoom.php'>
+                <aonclick=\"form.submit()\"><button id='join'>Join!</button></aonclick=>
+                <input type='hidden' value=\"".$room['link']."\" name='link'>
+                <input type='hidden' value=\"".$room['roomId']."\" name='roomId'>
+              </form>
             </div>
             </article>
             ";
