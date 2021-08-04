@@ -1,11 +1,11 @@
 <?php
     //$sort = ['roomSort'];
-    $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
-    FROM (((`_create` 
-        RIGHT JOIN room ON _create.roomId = room.roomId) 
-        LEFT JOIN users ON _create.userId = users.userId)
+    $sql = "SELECT _join.joinId, room.roomId, users.userName, room.roomName, room.roomSubject, room.link, banner.status, _join.joinTime
+    FROM (((`_join` 
+        LEFT JOIN room ON _join.roomId = room.roomId) 
+        LEFT JOIN users ON _join.userId = users.userId)
         LEFT JOIN banner ON room.roomId = banner.roomId) 
-        LIMIT 10;";
+        ORDER BY joinTime DESC LIMIT 10;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     if ($resultcheck>0) {
