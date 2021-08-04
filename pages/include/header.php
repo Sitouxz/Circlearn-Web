@@ -3,11 +3,11 @@
     require_once '../assets/include/dbh.inc.php';
 ?>
 <link rel="stylesheet" href="../assets/css/profile.css" />
-    <link rel="stylesheet" href="../assets/css/mainPage.css" />
+<link rel="stylesheet" href="../assets/css/mainPage.css" />
 <link rel="stylesheet" href="../assets/css/headerFooter.css" />
 <script>
-    $(document).ready(function() {
-        $(".searchButton").click(function() {
+$(document).ready(function() {
+    $(".searchButton").click(function() {
         var searchRoom = $("#search").val();
         $.post("searchRoom.php", {
             search: searchRoom
@@ -15,19 +15,20 @@
             $("#room").html(data)
             $('#show_more').hide();
         });
-        })
-        /*$('#join').click(function() {
-            $.ajax({
-            url: 'include/joinRoom.php',
-            success: function(data) {
-                window.location.href = data;
-            }
-            });
-        })*/
     })
-    function otw(link){
-        window.location.href = link;
-    }
+    /*$('#join').click(function() {
+        $.ajax({
+        url: 'include/joinRoom.php',
+        success: function(data) {
+            window.location.href = data;
+        }
+        });
+    })*/
+})
+
+function otw(link) {
+    window.location.href = link;
+}
 </script>
 <header>
     <div class="left">
@@ -40,7 +41,7 @@
     </div>
     <div class="wrap">
         <form action="searchRoom.php" method="GET" class="search">
-            <input type="search" class="searchTerm" placeholder="Search room" id="search" name="search"/>
+            <input type="search" class="searchTerm" placeholder="Search room" id="search" name="search" />
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
@@ -54,13 +55,13 @@
                 }
             }
             ?>
-            
+
         </form>
     </div>
     <div class="right">
         <a href="createRoom.php">
             <button>Create Room</button></a>
-            <?php
+        <?php
             if (!empty($_SESSION["nick"])) {
                 echo "<a href='javascript:void(0);' class='username' onclick='openProfile()'>";
                 echo "<p>".$_SESSION["nick"]."</p>";
@@ -88,24 +89,20 @@
             }
             echo "</a>";
         ?>
-        </div>
-        <a href="../assets/include/logout.inc.php" class="exit">
-            <img src="../assets/img/Exit.svg" alt="" />
-        </a>
+    </div>
+    <a href="../assets/include/logout.inc.php" class="exit">
+        <img src="../assets/img/Exit.svg" alt="" />
+    </a>
     </div>
 </header>
 
 <div class="dropdown" id="myLinks">
     <ul>
-        <li><a href="#">Profile</a></li>
+        <li><a href="../mainPage.php">Home</a></li>
         <hr>
-        <li><a href="#">Privacy</a></li>
+        <li><a href="#" onclick="openProfile()">Profile</a></li>
         <hr>
-        <li><a href="#">Menu</a></li>
-        <hr>
-        <li><a href="#">Menu</a></li>
-        <hr>
-        <li class="log-out-link"><a href="#">log out</a></li>
+        <li class="log-out-link"><a href="../assets/include/logout.inc.php">log out</a></li>
     </ul>
 </div>
 <?php include 'profile.php'?>

@@ -160,51 +160,6 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.bookmarks-content {
-  display: none;
-}
-.bookmarks-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 40px;
-  overflow-y: scroll;
-  height: 400px;
-}
-
-.bookmarks-card {
-  margin: 0;
-  padding: 0;
-  margin: 10px;
-}
-
-.bookmarks-card .banner {
-    background-image: url("../../assets/img/card-banner.png");
-    height: 120px;
-    border-radius: 20px;
-}
-
-.banner p {
-  font-size: 12px;
-  padding: 15px;
-  margin: 0;
-  color: white;
-}
-
-.delete {
-  margin-top: 15px;
-  padding: 5px 20px;
-    border: 2px solid tomato;
-    background-color: #fff;
-    border-radius: 5px;
-    color: tomato;
-    transition: 0.3s;
-}
-
-.delete:hover {
-    background-color: tomato;
-    color: #fff;
-    transition: 0.3s;
-}
 .avatar{
   width: 180px;
   height: 180px;
@@ -213,4 +168,201 @@ input[type="file"] {
 .profile-content{
   margin-left: 15px;
   margin-right: 15px;
+}
+
+#history{
+display: none;
+overflow-y: scroll;
+height: 461px;
+margin-bottom: 16px;
+}
+
+#history article img {
+width: 200px;
+grid-area: overlap;
+border-radius: 20px 20px 0px 0px;
+height: inherit;
+}
+
+#history article {
+width: 200px;
+margin: 5px;
+}
+
+.history-grid {
+margin: 15px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 10px;
+}
+
+.history-grid>article {
+background-color: rgb(248, 248, 248);
+border: none;
+box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+border-radius: 20px;
+width: 275px;
+transition: 0.3s;
+z-index: 99999;
+}
+
+.history-grid>article:hover {
+transform: translateY(5px);
+box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+transition: 0.3s;
+}
+
+.history-grid>article img {
+object-fit: cover;
+width: 275px;
+height: 120px;
+border-radius: 20px;
+}
+
+.history-grid>article .room-id {
+z-index: 999;
+}
+
+.img-container p {
+font-size: 12px;
+padding: 15px;
+margin: 0;
+color: rgb(255, 255, 255);
+}
+
+.img-container h1 {
+    color: white;
+    text-align: center;
+    margin-block-start: 1.5em;
+    margin-block-end: 0;
+}
+
+.img-container .bg-shadow p {
+    text-align: center;
+    padding: 5px;
+}
+
+.history-card{
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr;
+grid-template-areas: "overlap";
+height: 90px;
+}
+
+.history-card .room-id{
+grid-area: overlap;
+}
+
+.history-card .bg-shadow{
+grid-area: overlap;
+}
+
+.history-text button{
+border-radius: 0px 0px 20px 20px;
+}
+
+.history-text {
+padding: 0;
+}
+
+.history-text button {
+margin: 0;
+background-color: var(--primary-color);
+border-radius: 0px 0px 20px 20px;
+border: none;
+color: var(--light-color);
+padding: 10px;
+width: 100%;
+font-weight: 600;
+font-family: "Poppins", sans-serif;
+text-transform: uppercase;
+cursor: pointer;
+}
+
+.history-text button:hover {
+transition: 0.3s;
+background-color: orange;
+color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dfdfdf; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media (max-width: 900px) {
+  .history-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .profile-container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .profile-nav {
+    border: 0;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+  }
+
+  .profile-nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1px;
+  }
+
+  .profile-nav ul li {
+    padding: 0;
+  }
+
+  .profile-nav ul li:hover {
+  background-color: #fff;
+  }
+}
+
+@media (max-width: 500px) {
+  .history-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .profile-container {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+
+  #history {
+    height: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-container {
+    width: 250px;
+  }
 }

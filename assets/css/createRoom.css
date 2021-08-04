@@ -79,6 +79,7 @@
 }
 
 .room-info {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -157,7 +158,7 @@
   width: 312px;
 }
 
-  .cbanner .banner{
+  #roomBanner{
     width: 300px;
   }
   
@@ -171,7 +172,7 @@
   width: 262px;
 }
 
-  .cbanner .banner {
-    width: 200px;
+  #roomBanner{
+    width: 250px;
   }
 }
