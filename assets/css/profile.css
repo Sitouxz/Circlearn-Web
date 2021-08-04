@@ -215,27 +215,3 @@ input[type="file"] {
   margin-left: 15px;
   margin-right: 15px;
 }
-#history{
-  display: none;
-  overflow-y: scroll;
-  height: 461px;
-  margin-bottom: 16px;
-}
-
-#history .grid {
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5px;
-  margin-left: 6px;
-}
-
-#history article img {
-  width: 200px;
-}
-
-#history article {
-  width: 200px;
-  margin: 5px;
-}
-.history-content .grid{
-  margin: 0 15px 0 15px;
-}
