@@ -75,10 +75,13 @@
     <div class="grid" id="room">
     <?php
         $order = "ORDER BY timeCreated DESC";
-        $sort = $_GET['sort'];
-        if ($sort == "oldest") {
-            $order = "ORDER BY timeCreated ASC";
+        if (isset($_GET['sort'])) {
+            $sort = $_GET['sort'];
+            if ($sort == "oldest") {
+                $order = "ORDER BY timeCreated ASC";
+            }
         }
+        
     $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
     FROM (((`_create` 
         RIGHT JOIN room ON _create.roomId = room.roomId) 

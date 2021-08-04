@@ -54,9 +54,15 @@
                     <div class='user-info'>
                         <h4>Gender</h4>
                         <?php
+                        $age = $_SESSION["birth"];
+                        $bday = new DateTime($age);
+                        $today = new Datetime(date('m.d.y'));
+                        $diff = $today->diff($bday);
+                        $ageNow = $diff->y;
+                        
                     echo"<p>".$_SESSION["gender"]."</p>";
                     echo"<h4>Age</h4>";
-                    echo"<p>18</p>";
+                    echo"<p>".$ageNow."</p>";
                     echo"<h4>Email</h4>";
                     echo"<p>".$_SESSION["email"]."</p>";
                     echo"<br>";

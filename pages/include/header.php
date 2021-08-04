@@ -49,7 +49,9 @@
                 echo "<input type='hidden' value='newest' name='sort'>"; 
             }
             else {
-                echo "<input type='hidden' value='".$_GET['sort']."' name='sort'>"; 
+                if (isset($_GET['sort'])) {
+                    echo "<input type='hidden' value='".$_GET['sort']."' name='sort'>"; 
+                }
             }
             ?>
             
