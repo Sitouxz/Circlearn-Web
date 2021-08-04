@@ -41,7 +41,7 @@ With Productive Community of Students." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
-<body onload="alert('heyoo');">
+<body>
     <header class="topnav">
         <a href="index.php"><img src="./assets/img/Logo.svg" alt="logo" /></a>
         <nav>

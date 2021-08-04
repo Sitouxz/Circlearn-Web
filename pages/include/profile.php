@@ -59,8 +59,6 @@
                     echo"<p>18</p>";
                     echo"<h4>Email</h4>";
                     echo"<p>".$_SESSION["email"]."</p>";
-                    // echo"<h4>Phone Number</h4>";
-                    // echo"<p>08123456789</p>";
                     echo"<br>";
                     echo"<button>Edit Profile</button>";
                     ?>

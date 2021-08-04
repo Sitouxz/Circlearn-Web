@@ -15,7 +15,11 @@
                 </div>
             </div>
             <div class='history-text'>
-                <a href='".$room['link']."'><button>Join!</button></a>
+              <form method='POST' action='include/joinRoom.php'>
+                <a onclick=\"form.submit()\"><button id='join'>Join!</button></a>
+                <input type='hidden' value=\"".$room['link']."\" name='link'>
+                <input type='hidden' value=\"".$room['roomId']."\" name='roomId'>
+              </form>
             </div>
         </article>
         ";

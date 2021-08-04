@@ -81,6 +81,10 @@
               <input type="radio" name="gender" /> Female
             </div>
           </label>
+          <label>
+              <span>Password</span>
+              <input type="password" name="pwd"/>
+            </label>
           <div class="password">
             <label>
               <span>Password</span>
