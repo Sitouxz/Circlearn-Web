@@ -33,6 +33,15 @@
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
+            <?php 
+            if (!isset($_GET['search'])) {
+                echo "<input type='hidden' value='newest' name='sort'>"; 
+            }
+            else {
+                echo "<input type='hidden' value='".$_GET['sort']."' name='sort'>"; 
+            }
+            ?>
+            
         </form>
     </div>
     <div class="right">

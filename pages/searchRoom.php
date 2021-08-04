@@ -39,26 +39,44 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function emptySearch() {
+            var x = document.getElementById("room-top");
+            x.style.display = "none";
+            alert('heloo');
+        }
+    </script>
 </head>
 
-<body>
+<body onload="emptySearch();">
     <?php include 'include/header.php'?>
 
     <section>
-        <div class="card-container">
+        <div class="card-container" >
             <h1>ROOMS</h1>
-            <label>Sort room by</label>
-            <form method="get">
-                <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()">
-                <label for="newest">Newest</label>
-                <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()">
-                <label for="oldest">Oldest</label>
-            </form>
-            <div class="grid" id="room">
-                <?php
+            <div class="sort">
+                <div class="sort-content">
+                    <div class="text">
+                        <p>Sort room by</p>
+                    </div>
+                    <div class="form">
+                        <form method="get">
+                            <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()"
+                                onclick="check()">
+                            <label for="newest">Newest</label>
+                            <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()"
+                                onclick="check()">
+                            <label for="oldest">Oldest</label>
+                            <input type="hidden" value="<?php echo $_GET['search']; ?>" name="search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+    <div class="grid" id="room">
+    <?php
         $order = "ORDER BY timeCreated DESC";
-        $sort = $_SESSION['sort'];
-        if ($_SESSION['sort'] == "oldest") {
+        $sort = $_GET['sort'];
+        if ($sort == "oldest") {
             $order = "ORDER BY timeCreated ASC";
         }
     $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
@@ -70,23 +88,21 @@
     $result = mysqli_query($conn,$sql);
     $room = mysqli_fetch_assoc($result);
 if(isset($_GET['search'])){
-    $emptySearch = 0;
     $search = $_GET['search'];
     if (!empty($search)) {
+        $roomEmpty = true;
         do{
             if (strpos($room['roomName'], $search)!==false){
                 include 'include/room.php';
-                $emptySearch++;
+                $roomEmpty = false;
             }
-            //nanti mo kase pisah mana hasil search by roomId dan mana yang hasil search by roomName
-            //nanti mo tambah hasil search by Subject
-            else if ($room['roomId'] === $search){
+            else if($room['roomId'] === $search){
                 include 'include/room.php';
-                $emptySearch++;
+                $roomEmpty = false;
             }
         }while ($room = mysqli_fetch_assoc($result));
-        if ($emptySearch == 0) {
-            echo "<h2 class='notfound'>Room not Found!</h2>";
+        if ($roomEmpty == true) {
+            echo "<h2 class=\"notfound\" >Room not Found!</h2>";
         }
     }
 }

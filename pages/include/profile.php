@@ -40,7 +40,7 @@
                                 <i class="fa fa-cloud-upload"></i> Upload Photo
                             </label>
                             <input id="file-upload-ava" type="file" class="input-img" name="avatar"
-                                onchange="form.submit()" />
+                                onchange="form.submit()" accept="image/*"/>
                         </form>
                         <br>
                         <div class="user-name">

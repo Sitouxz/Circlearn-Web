@@ -48,15 +48,6 @@
                 count: count
             })
         })
-        /*        $(".searchTerm").keyup(function() {
-                var searchRoom = $("#search").val();
-                $.post("searchRoom.php", {
-                    search: searchRoom
-                }, function(data, status) {
-                    $("#room").html(data)
-                    $('#show_more').hide();
-                });
-                })*/
     })
     </script>
 </head>
@@ -89,7 +80,7 @@
                 if (isset($_GET['sort'])) {
                     if ($_GET['sort'] == "oldest") {
                         $order = "ORDER BY timeCreated ASC";
-                    }$_SESSION['sort'] = $_GET['sort'];
+                    }
                 }
                 
             ?>
