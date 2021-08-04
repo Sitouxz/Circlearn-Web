@@ -40,7 +40,7 @@
                                 <i class="fa fa-cloud-upload"></i> Upload Photo
                             </label>
                             <input id="file-upload-ava" type="file" class="input-img" name="avatar"
-                                onchange="form.submit()" accept="image/*"/>
+                                onchange="form.submit()" accept="image/*" />
                         </form>
                         <br>
                         <div class="user-name">
@@ -79,123 +79,6 @@
                     <button id="save-info" class="about-button">Save</button>
                 </div>
             </div>
-            <style>
-                
-                #history{
-                display: none;
-                overflow-y: scroll;
-                height: 461px;
-                margin-bottom: 16px;
-                }
-
-                #history .grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 5px;
-                margin-left: 6px;
-                }
-
-                #history article img {
-                width: 200px;
-                grid-area: overlap;
-                border-radius: 20px 20px 0px 0px;
-                height: inherit;
-                }
-
-                #history article {
-                width: 200px;
-                margin: 5px;
-                }
-                .history-grid {
-                margin: 15px;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-gap: 10px;
-                }
-
-                .history-grid>article {
-                background-color: rgb(248, 248, 248);
-                border: none;
-                box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-                border-radius: 20px;
-                width: 275px;
-                transition: 0.3s;
-                }
-
-                .history-grid>article:hover {
-                transform: translateY(5px);
-                box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
-                transition: 0.3s;
-                z-index: -999;
-                }
-
-                .history-grid>article img {
-                object-fit: cover;
-                width: 275px;
-                height: 120px;
-                border-radius: 20px;
-                }
-
-                .history-grid>article .room-id {
-                z-index: 999;
-                }
-
-                .img-container p {
-                font-size: 12px;
-                padding: 15px;
-                margin: 0;
-                color: rgb(255, 255, 255);
-                }
-
-                .img-container h1 {
-                    color: white;
-                    text-align: center;
-                    margin-block-start: 1.5em;
-                    margin-block-end: 0;
-                }
-                .img-container .bg-shadow p {
-                    text-align: center;
-                    padding: 5px;
-                }
-                .history-card{
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
-                grid-template-areas: "overlap";
-                height: 90px;
-                }
-                .history-card .room-id{
-                grid-area: overlap;
-                }
-                .history-card .bg-shadow{
-                grid-area: overlap;
-                }
-                .history-text button{
-                border-radius: 0px 0px 20px 20px;
-                }
-                .history-text {
-                padding: 0;
-                }
-
-                .history-text button {
-                margin: 0;
-                background-color: var(--primary-color);
-                border-radius: 0px 0px 20px 20px;
-                border: none;
-                color: var(--light-color);
-                padding: 10px;
-                width: 100%;
-                font-weight: 600;
-                font-family: "Poppins", sans-serif;
-                text-transform: uppercase;
-                cursor: pointer;
-                }
-
-                .history-text button:hover {
-                transition: 0.3s;
-                background-color: orange;
-                color: white;
-                }
-            </style>
             <div class="history-content" id="history">
                 <div class="history-grid" id="room">
                     <?php include 'historyRoom.php'; ?>
