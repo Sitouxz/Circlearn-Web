@@ -12,15 +12,15 @@
     $now = date("Y-m-d H:i:s");
     if ($resultcheck>0) {
         while ($room = mysqli_fetch_assoc($result)) {  
-        $created = $room['joinTime'];
-        $date1 = new DateTime($created);
+        $join = $room['joinTime'];
+        $date1 = new DateTime($join);
         $date2 = new DateTime($now);
 
         // The diff-methods returns a new DateInterval-object...
         $diff = $date2->diff($date1);
 
         // Call the format method on the DateInterval-object
-        $joinTime = $diff->format('%hh ago');
+        $joinTime = $diff->format('%hh %im ago');
 
         include 'miniRoom.php';
         }

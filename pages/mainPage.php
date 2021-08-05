@@ -44,11 +44,12 @@
         var count = 10;
         $("#show_more").click(function() {
             count = count + 10;
-            $("#room").load("include/moreRoom.php", {
+            $(".grid").load("include/moreRoom.php", {
                 count: count
             })
         })
     })
+    
     </script>
 </head>
 
@@ -89,6 +90,7 @@
                     include 'include/defaultRoom.php';
                 ?>
             </div>
+            
             <button id="show_more">Show more!</button>
         </div>
     </section>

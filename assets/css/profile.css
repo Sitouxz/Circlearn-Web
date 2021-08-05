@@ -369,4 +369,5 @@ color: white;
 #time{
   display: flex;
   justify-content: flex-end;
+  font-size: x-small;
 }

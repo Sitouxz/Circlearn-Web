@@ -8,8 +8,10 @@
         $order LIMIT 10;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
+    $now = date("Y-m-d H:i:s");
     if ($resultcheck>0) {
-        while ($room = mysqli_fetch_assoc($result)) {    
+        while ($room = mysqli_fetch_assoc($result)) { 
+            
         include 'room.php';
         }
     }
