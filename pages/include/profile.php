@@ -42,8 +42,8 @@
                             <input id="file-upload-ava" type="file" class="input-img" name="avatar"
                                 onchange="form.submit()" accept=".jpg" />
                         </form>
-                        <form action="include/removeAva.php" method="POST">
-                            <button id="file-remove-ava" class="input-img" onclick="form.submit()"/>
+                        <form action="include/removeAva.php">
+                            <input type="submit" value="Del">
                         </form>
                         <br>
                         <div class="user-name">
@@ -81,7 +81,7 @@
                             }else{
                             echo $_SESSION["about"];
                             }
-                        ?>" placeholder="....">
+                        ?>" placeholder="Type here...">
                     </div>
                     <button id="save-info" class="about-button">Save</button>
                 </div>
