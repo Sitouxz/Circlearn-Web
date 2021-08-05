@@ -40,7 +40,10 @@
                                 <i class="fa fa-cloud-upload"></i> Upload Photo
                             </label>
                             <input id="file-upload-ava" type="file" class="input-img" name="avatar"
-                                onchange="form.submit()" accept="image/*" />
+                                onchange="form.submit()" accept=".jpg" />
+                        </form>
+                        <form action="include/removeAva.php" method="POST">
+                            <button id="file-remove-ava" class="input-img" onclick="form.submit()"/>
                         </form>
                         <br>
                         <div class="user-name">
