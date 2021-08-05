@@ -57,7 +57,7 @@
             <div class="sort">
                 <div class="sort-content">
                     <div class="text">
-                        <p>Sort room by</p>
+                        <p>Sort room by :</p>
                     </div>
                     <div class="form">
                         <form method="get">
