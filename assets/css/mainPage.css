@@ -95,17 +95,25 @@
   height: 120px;
   border-radius: 20px;
 }
-/* .banner2 {
-  position: absolute;
-  width: 100%;
-  height: 120px;
-  border-radius: 20px;
-  z-index: 1;
-} */
+
 .grid > article .room-id{
   margin-top: -120px;
-  margin-bottom: 100px;
   z-index: 999;
+}
+
+.grid > article .bg-shadow {
+  margin-top: -75px;
+  margin-bottom: 50px;
+}
+
+.bg-shadow h1 {
+  font-size: 18px;
+  margin: 0;
+  max-height: 20px;
+}
+
+.bg-shadow h1, .bg-shadow p {
+  color: white;
 }
 
 .img-container p {
@@ -141,13 +149,14 @@
 
 .text p {
   font-size: 14px;
+  
 }
 
-.notfound {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.text .description {
+  overflow-y: scroll;
+  height: 45px;
+  min-height: 45px;
+  max-height: 45px;
 }
 
 .text button {
@@ -162,6 +171,13 @@
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.notfound {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 1600px) {

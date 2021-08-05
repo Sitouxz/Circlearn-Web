@@ -366,8 +366,10 @@ color: white;
     width: 250px;
   }
 }
-#time{
+
+.id-container {
   display: flex;
-  justify-content: flex-end;
-  font-size: x-small;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
