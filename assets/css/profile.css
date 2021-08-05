@@ -366,3 +366,7 @@ color: white;
     width: 250px;
   }
 }
+#time{
+  display: flex;
+  justify-content: flex-end;
+}

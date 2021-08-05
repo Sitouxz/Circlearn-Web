@@ -9,6 +9,7 @@
             }
             echo "
                 <p class='room-id'>".$room['roomId']. " | " .$room['userName']."</p>
+                <p class='room-id' id='time'>".$joinTime."</p>
                 <div class='bg-shadow'>
                     <h1>".$room['roomName']."</h1>
                     <p>".$room['roomSubject']."</p>
