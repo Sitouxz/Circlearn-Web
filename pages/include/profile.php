@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="javascript:void(0);" onclick="basicInfo()">Basic Info</a></li>
                 <li><a href="javascript:void(0);" onclick="history()">History</a></li>
-                <li><a href="javascript:void(0);" onclick="manage()">Manage</a></li>
+                <li><a href="javascript:void(0);" onclick="manage()">My Room</a></li>
                 <li class="logout"><a href="../assets/include/logout.inc.php">Log out</a></li>
             </ul>
         </div>

@@ -6,12 +6,12 @@
             $order = "ORDER BY timeCreated ASC";
         }
     }
-    $sql = "SELECT room.roomId, users.userId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
+    $sql = "SELECT room.roomId, users.userId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated, room.del
     FROM (((`_create` 
         RIGHT JOIN room ON _create.roomId = room.roomId) 
         LEFT JOIN users ON _create.userId = users.userId)
         LEFT JOIN banner ON room.roomId = banner.roomId)
-        WHERE users.userId = $id;";
+        WHERE users.userId = $id AND room.del = 'false'";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     $now = date("Y-m-d H:i:s");
@@ -28,7 +28,7 @@
             $joinTime = $diff->format('%dd %hh');
             echo "
             <article>
-                <div class='img-container history-card'>";
+                <div class='img-container history-card manage-card'>";
                 if ($room['status'] == 1) {
                   echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
                 }else {
@@ -42,10 +42,17 @@
                         <p>".$room['roomSubject']."</p>
                     </div>
                 </div>
-                <div class='history-text'>
-                  <form method='POST' action='include/joinRoom.php'>
-                    <a onclick=\"form.submit()\"><button id='join'>Join!</button></a>
+                <div class='history-text bot'>
+                  <form method='POST' action='editRoom.php' class='edit'>
+                    <a onclick=\"form.submit()\"><button id='edit'>Edit</button></a>
                     <input type='hidden' value=\"".$room['link']."\" name='link'>
+                    <input type='hidden' value=\"".$room['roomSubject']."\" name='roomSubject'>
+                    <input type='hidden' value=\"".$room['roomName']."\" name='roomName'>
+                    <input type='hidden' value=\"".$room['des']."\" name='des'>
+                    <input type='hidden' value=\"".$room['roomId']."\" name='roomId'>
+                  </form>
+                  <form method='POST' action='include/delRoom.php' class='del'>
+                    <a onclick=\"form.submit()\"><button id='del'>Delete</button></a>
                     <input type='hidden' value=\"".$room['roomId']."\" name='roomId'>
                   </form>
                 </div>

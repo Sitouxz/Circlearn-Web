@@ -46,8 +46,7 @@
     <?php include 'include/header.php'?>
     <div class="content-header">
         <ul>
-            <li class="active"><a href="#">Create Room</a></li>
-            <li><a href="./manageRoom.php">Manage Room</a></li>
+            <li class="active">Create Room</li>
         </ul>
     </div>
 

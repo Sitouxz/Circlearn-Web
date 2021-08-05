@@ -327,8 +327,10 @@ grid-area: overlap;
 }
 
 #time {
-  margin-left: 95px;
+  display: flex;
+  justify-content: flex-end;
 }
+
 
 .history-card .bg-shadow{
   margin-top: 30px;
@@ -451,3 +453,49 @@ color: white;
   padding: 0;
 }
 
+.manage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "manage-card manage-card"
+    "bot bot";
+}
+
+.manage-card { grid-area: manage-card; }
+
+.bot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Edit Del";
+  grid-area: bot;
+}
+
+.Edit { grid-area: Edit; }
+
+.Del { grid-area: Del; }
+
+.edit a button { 
+  background-color: #1878F5;
+  border-radius: 0px 0px 0px 20px;
+}
+
+.del a button { 
+  background-color: #F52F18;
+  border-radius: 0px 0px 20px 0px;
+}
+.edit a button:hover{ 
+  border-radius: 0px 0px 0px 20px; 
+  background-color: #1565CF;
+}
+
+.del a button:hover{ 
+  border-radius: 0px 0px 20px 0px; 
+  background-color: #CF2715;
+}
