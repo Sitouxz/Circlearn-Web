@@ -6,7 +6,7 @@
         LEFT JOIN room ON _join.roomId = room.roomId)
         LEFT JOIN users ON _create.userId = users.userId) 
         LEFT JOIN banner ON room.roomId = banner.roomId) 
-        ORDER BY joinTime DESC;";
+        ORDER BY joinTime DESC LIMIT 15;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     $now = date("Y-m-d H:i:s");

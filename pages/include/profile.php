@@ -94,9 +94,8 @@
 </div>
     </div>
     <div class="manage-content" id="manage">
-<div class="history-grid" id="room">
-    <?php //include 'historyRoom.php';
-        echo "heyoo"; ?>
+<div class="manage-grid" id="room">
+    <?php include 'manageRoom.php'; ?>
 </div>
     </div>
 </div>
