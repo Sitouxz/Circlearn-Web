@@ -43,7 +43,7 @@
                                 onchange="form.submit()" accept=".jpg" />
                         </form>
                         <form action="include/removeAva.php">
-                            <input type="submit" value="Del">
+                            <input type="submit" value="Delete Photo" class="profile-delete-btn">
                         </form>
                         <br>
                         <div class="user-name">

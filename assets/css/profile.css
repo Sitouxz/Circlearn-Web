@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 0 40px 40px;
 }
 
 input[type="file"] {
@@ -83,9 +83,11 @@ input[type="file"] {
     border: 2px solid var(--primary-color);
     border-radius: 5px;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 10px;
     cursor: pointer;
     color: var(--primary-color);
+    margin: 10px;
+    text-align: center;
 }
 
 .user-name h4, .user-name p {
@@ -112,6 +114,22 @@ input[type="file"] {
   border-radius: 5px;
   font-size: 14px;
   padding: 5px 10px;
+  
+}
+
+.profile-delete-btn {
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+  color: rgb(253, 94, 94);
+  background-color: #fff;
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  padding: 3px 25px;
 }
 
 .user-info button:hover {
@@ -254,7 +272,12 @@ height: 90px;
 grid-area: overlap;
 }
 
+#time {
+  margin-left: 95px;
+}
+
 .history-card .bg-shadow{
+  margin-top: 30px;
 grid-area: overlap;
 }
 
@@ -373,3 +396,4 @@ color: white;
   margin: 0;
   padding: 0;
 }
+

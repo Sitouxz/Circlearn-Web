@@ -30,7 +30,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto;
   padding-top: 50px;
 }
 
@@ -57,25 +56,9 @@
   background-image: url("../img/card-banner.png");
   margin-bottom: 15px;
 }
-.custom-file-upload
-.cbanner button {
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  padding: 5px 15px;
-  outline: none;
-  color: orange;
-  border: 2px solid orange;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.cbanner button:hover {
-  transition: 0.3s;
-  background-color: orange;
-  color: white;
+.croom-container .custom-file-upload {
+  z-index: 10;
 }
 
 .room-info {
@@ -86,6 +69,7 @@
 
 .room-info label {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   padding: 15px 0;
 }
