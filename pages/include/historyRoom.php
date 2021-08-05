@@ -3,7 +3,7 @@
     $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, banner.status, _join.joinTime
     FROM ((((`_join` 
         LEFT JOIN _create ON _join.roomId = _create.roomId)
-        LEFT JOIN room ON _join.roomId = room.roomId)
+        RIGHT JOIN room ON _join.roomId = room.roomId)
         LEFT JOIN users ON _create.userId = users.userId) 
         LEFT JOIN banner ON room.roomId = banner.roomId) 
         ORDER BY joinTime DESC LIMIT 15;";

@@ -6,7 +6,8 @@
         <div class="profile-nav">
             <ul>
                 <li><a href="javascript:void(0);" onclick="basicInfo()">Basic Info</a></li>
-                <li><a href="javascript:void(0);" onclick="history()">history</a></li>
+                <li><a href="javascript:void(0);" onclick="history()">History</a></li>
+                <li><a href="javascript:void(0);" onclick="manage()">Manage</a></li>
                 <li class="logout"><a href="../assets/include/logout.inc.php">Log out</a></li>
             </ul>
         </div>
@@ -91,6 +92,11 @@
             <?php include 'historyRoom.php'; ?>
         </div>
     </div>
+    <div class="manage-content" id="manage">
+        <div class="manage-grid" id="room">
+            <?php include 'manageRoom.php'; ?>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -125,15 +131,26 @@ function profilePopup() {
 
 function basicInfo() {
     var x = document.getElementById("basic");
+    var y = document.getElementById("manage");
     var z = document.getElementById("history");
     x.style.display = "block";
+    y.style.display = "none";
     z.style.display = "none";
 }
-
-function history() {
+function manage() {
     var x = document.getElementById("basic");
+    var y = document.getElementById("manage");
     var z = document.getElementById("history");
     x.style.display = "none";
+    y.style.display = "block";
+    z.style.display = "none";
+}
+function history() {
+    var x = document.getElementById("basic");
+    var y = document.getElementById("manage");
+    var z = document.getElementById("history");
+    x.style.display = "none";
+    y.style.display = "none";
     z.style.display = "block";
 }
 $(document).ready(function() {

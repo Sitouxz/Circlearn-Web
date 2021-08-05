@@ -1,21 +1,31 @@
 <?php
+    $id = $_SESSION["userid"];
     $order = "ORDER BY timeCreated DESC";
     if (isset($_GET['sort'])) {
         if ($_GET['sort'] == "oldest") {
             $order = "ORDER BY timeCreated ASC";
         }
     }
-    $sql = "SELECT room.roomId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
+    $sql = "SELECT room.roomId, users.userId, users.userName, room.roomName, room.roomSubject, room.link, room.des, banner.status, _create.timeCreated 
     FROM (((`_create` 
         RIGHT JOIN room ON _create.roomId = room.roomId) 
         LEFT JOIN users ON _create.userId = users.userId)
-        LEFT JOIN banner ON room.roomId = banner.roomId) 
-        $order;";
+        LEFT JOIN banner ON room.roomId = banner.roomId)
+        WHERE users.userId = $id;";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
     $now = date("Y-m-d H:i:s");
     if ($resultcheck>0) {
         while ($room = mysqli_fetch_assoc($result)) {
+            $join = $room['timeCreated'];
+            $date1 = new DateTime($join);
+            $date2 = new DateTime($now);
+
+            // The diff-methods returns a new DateInterval-object...
+            $diff = $date2->diff($date1);
+
+            // Call the format method on the DateInterval-object
+            $joinTime = $diff->format('%dd %hh');
             echo "
             <article>
                 <div class='img-container history-card'>";
