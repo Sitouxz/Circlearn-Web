@@ -98,7 +98,7 @@ function otw(link) {
 
 <div class="dropdown" id="myLinks">
     <ul>
-        <li><a href="../mainPage.php">Home</a></li>
+        <li><a href="../pages/mainPage.php">Home</a></li>
         <hr>
         <li><a href="#" onclick="openProfile()">Profile</a></li>
         <hr>
