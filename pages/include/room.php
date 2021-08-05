@@ -8,7 +8,7 @@ $created = $room['timeCreated'];
             $diff = $date2->diff($date1);
         
             // Call the format method on the DateInterval-object
-            $timeCreated = $diff->format(' %dd %hh %im ago');
+            $timeCreated = $diff->format(' %dd %hh %im');
 echo "
 <article>
 <div class=\"img-container\">";
