@@ -53,7 +53,16 @@
     </script>
 </head>
 
-<body>
+<body onload="<?php 
+if (isset($_GET['sort'])) {
+    if ($_GET['sort']=="newest") {
+        echo "checkNew()";
+    }
+    else if ($_GET['sort']=="oldest") {
+        echo "checkOld()";
+    }
+}
+?>">
     <?php include 'include/header.php'?>
 
     <section>
@@ -67,7 +76,7 @@
                     <div class="form">
                         <form method="get">
                             <input type="radio" name="sort" value="newest" id="newest" onclick="form.submit()"
-                                onclick="check()">
+                                onclick="check()" >
                             <label for="newest">Newest</label>
                             <input type="radio" name="sort" value="oldest" id="oldest" onclick="form.submit()"
                                 onclick="check()">
@@ -107,12 +116,12 @@
         }
     }
 
-    function check() {
-        document.getElementById("red").checked = true;
+    function checkNew() {
+        document.getElementById("newest").checked = true;
     }
 
-    function uncheck() {
-        document.getElementById("red").checked = false;
+    function checkOld() {
+        document.getElementById("oldest").checked = true;
     }
     </script>
 </body>
