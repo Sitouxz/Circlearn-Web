@@ -55,3 +55,9 @@ function setBanner($conn,$fileName,$fileTmpName,$roomId){
         
     mysqli_query($conn,$sql);
 }
+function modifyRoom($conn, $roomName, $roomSubject, $link, $des, $id){
+    $sql = "UPDATE room
+    SET roomName = '$roomName', roomSubject = '$roomSubject', link = '$link', des = '$des'
+    WHERE roomId = $id;";
+    mysqli_query($conn, $sql);
+}

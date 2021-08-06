@@ -38,7 +38,7 @@
             </label>
         </form>
 
-        <form class="room-info-container" action="include/modifyRoom.php" method="post"
+        <form class="room-info-container" action="../assets/include/modifyRoom.php" method="post"
             enctype="multipart/form-data">
             <input type="file" id="file-upload-banner" class="input-img" name="banner" onchange="previewImage()"
                 accept=".jpg" />
