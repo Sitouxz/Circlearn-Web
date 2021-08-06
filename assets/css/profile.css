@@ -76,6 +76,10 @@
   padding: 0 40px 40px;
 }
 
+.top .user img {
+  object-fit: cover;
+}
+
 input[type="file"] {
     display: none;
 }
@@ -103,6 +107,7 @@ input[type="file"] {
   width: 244px;
   height: 244px;
   border-radius: 50%;
+  
 }
 
 .user-info button {
@@ -123,13 +128,14 @@ input[type="file"] {
   font-size: 14px;
   border: none;
   text-align: center;
-  color: rgb(253, 94, 94);
-  background-color: #fff;
-  border: 2px solid red;
+  color: rgb(255, 255, 255);
+  background-color: rgb(250, 84, 84);
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
-  padding: 3px 25px;
+  padding: 0;
+  padding: 3px 10px;
+  cursor: pointer;
 }
 
 .user-info button:hover {

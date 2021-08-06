@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #00adb5;
+  --secondary-color: #aad8d3;
+  --light-color: #eeeeee;
+  --dark-color: #393e46;
+  --darker-color: #282c31;
+  --primary-darker-color: #001c1e;
+  --gray-color: #bcbcbc;
+  --dark-secondary-color: #2f2e41;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  background-image: url("../img/login-bg.svg");
+  position: relative;
+  min-height: 100vh;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 400px;
+    height: 530px;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+      box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logo img{
+    height: 100px;
+}
+
+.text {
+    width: 350px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form label{
+    font-size: 18px;
+}
+
+.form form input {
+    font-size: 18px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 10px 0;
+}
+
+.form form button {
+    margin-top: 15px;
+    border: none;
+    color: white;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 7px 0;
+  width: 200px;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.form form button:hover {
+    background-color: rgb(38, 126, 121);
+    transition: 0.3s ease-in-out;
+}
+
+.bottom-text {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.bottom-text a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+.bottom-text a:hover {
+    text-decoration: none;
+    color: var(--primary-darker-color);
+    transition: 0.5s;
+}
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 80vw;
+    }
+
+    .text {
+        width: 70vw;
+    }   
+
+.form form input {
+    width: 70vw;
+}
+
+.form form button {
+  width: 50vw;
+}
+
+.bottom-text {
+    margin-top: 20px;
+}
+}

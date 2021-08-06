@@ -168,6 +168,7 @@ hr {
 
 .user img {
   margin: 0 10px;
+  object-fit: cover;
 }
 
 .right .username {
