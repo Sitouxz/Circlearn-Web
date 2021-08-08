@@ -16,9 +16,9 @@
             <img src="../assets/img/Logo.svg" alt="logo">
         </div>
         <div class="text">
-            <p>Rejoin the circle,
-                Enter the community
-                and learn together</p>
+            <p>Create a free Circlearn account
+                and join with the other students
+                for new experience of studying</p>
             <h1>LOGIN</h1>
         </div>
         <div class="form">

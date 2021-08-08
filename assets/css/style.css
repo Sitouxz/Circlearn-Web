@@ -600,4 +600,16 @@ textarea {
   header nav ul li a {
     width: 1000%;
   }
+
+  div.get-started#mobile {
+    display: block;
+  }
+
+  .get-started {
+    display: none;
+  }
+}
+
+.get-started#mobile {
+  display: none;
 }

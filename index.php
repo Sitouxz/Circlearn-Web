@@ -73,7 +73,10 @@ With Productive Community of Students." />
                 with productive COmmunity of students.
             </p>
             <div class="get-started">
-                <a href="./pages/login.php">Get Started</a>
+                <a id="desktop" href="./pages/login.php">Get Started</a>
+            </div>
+            <div class="get-started" id="mobile">
+                <a id="mobile" href="./pages/login.mobi.php">Get Started</a>
             </div>
         </div>
     </div>
