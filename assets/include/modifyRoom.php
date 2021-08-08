@@ -46,8 +46,8 @@ if (isset($_POST['submit'])) {
         header("location: ../../pages/mainPage.php?changed");
         exit();
     }
-    //header("location: ../mainPage.php?$fileName");
-    //exit();
+    header("location: ../../pages/mainPage.php?$fileName");
+    exit();
 }
 else{
     header("location: editRoom.php");
