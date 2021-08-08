@@ -29,11 +29,11 @@ function pwdMatch($pwd,$repwd){
     }
     return $result;
 }
-function uidExists($conn, $email, $username){
+function uidExists($conn, $email, $username,$link){
     $sql = "SELECT * FROM users WHERE userEmail = ? OR userName = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../../pages/login.php?error=stmtfailedd");
+        header("location: ../../pages/$link?error=stmtfailedd");
         exit();
     }
 
@@ -52,11 +52,11 @@ function uidExists($conn, $email, $username){
 
     mysqli_stmt_close($stmt);
 }
-function createUser($conn, $username, $email, $pwd, $dob, $gender){
+function createUser($conn, $username, $email, $pwd, $dob, $gender, $link){
     $sql = "INSERT INTO users (userName,userEmail,userPwd,Birth,gender) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../../pages/login.php?error=stmtfailed");
+        header("location: ../../pages/$link?error=stmtfailed");
         exit();
     }
 
@@ -76,11 +76,11 @@ function emptyInputLogin($email,$pwd){
 
     return $result;
 }
-function loginUser($conn, $username, $pwd){
-    $uidExists = uidExists($conn, $username, $username);
+function loginUser($conn, $username, $pwd, $link){
+    $uidExists = uidExists($conn, $username, $username, $link);
 
     if($uidExists === false){
-        header("location: ../../pages/login.php?error=wronglogin");
+        header("location: ../../pages/$link?error=wronglogin");
         exit();
     }
 
@@ -88,7 +88,7 @@ function loginUser($conn, $username, $pwd){
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../../pages/login.php?error=wronglogin");
+        header("location: ../../pages/$link?error=wronglogin");
         exit();
     }
     else if($checkPwd === true){
@@ -104,9 +104,9 @@ function loginUser($conn, $username, $pwd){
         exit();
     }
 }
-function setAva($conn, $username)
+function setAva($conn, $username, $link)
 {
-    $data = uidExists($conn, $username, $username);
+    $data = uidExists($conn, $username, $username, $link);
     $id = $data["userId"];
     $sql = "INSERT INTO ava (userId, status) VALUES ('$id', 0);";
     mysqli_query($conn,$sql);

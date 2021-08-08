@@ -22,7 +22,7 @@
             <h1>LOGIN</h1>
         </div>
         <div class="form">
-            <form action="">
+            <form action="../assets/include/login.inc.php" method="post">
                 <label>
                     <span>Username/Email</span><br>
                     <input type="text" name="email" />
@@ -31,12 +31,26 @@
                     <span>Password</span><br>
                     <input type="password" name="pwd" />
                 </label>
-                <button>Sign in</button>
+                <?php
+                if(isset($_GET["error"])){
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p>Fill in all fields!</p>";
+                    }
+                    if ($_GET["error"] == "wronglogin") {
+                        echo "<p>Failed to login!</p>";
+                    }
+                    if ($_GET["error"] == "noconnect") {
+                      echo "<p>Can't connect!</p>";
+                  }
+                }
+                ?>
+                <input type="hidden" name="mobi" value="mobile" />
+                <button type="submit" name="submit">Sign in</button>
             </form>
         </div>
         <div class="bottom-text">
             <p>Don't have an account?</p>
-            <a href="#">Sign up</a>
+            <a href="register.php">Sign up</a>
         </div>
     </div>
 </body>

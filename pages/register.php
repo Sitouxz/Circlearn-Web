@@ -22,21 +22,20 @@
             <h1>LOGIN</h1>
         </div>
         <div class="form">
-            <form action="">
+            <form action="../assets/include/signup.inc.php" method="post">
                 <label>
                     <span>Username</span><br>
-                    <input type="text" name="email" />
+                    <input type="text" name="username" />
                 </label>
                 <label>
                     <span>Email</span><br>
-                    <input type="text" name="email" />
+                    <input type="email" name="email" />
                 </label>
                 <div class="gender">
                     <span class="text">Gender</span> <br>
                     <label class="container">
                         <input type="radio" name="gender" value="Male" /> Male
                     </label>
-
                     <label class="container">
                         <input type="radio" name="gender" value="Female" /> Female
                     </label>
@@ -51,14 +50,38 @@
                 </label>
                 <label>
                     <span>Confirm password</span><br>
-                    <input type="password" name="pwd" />
+                    <input type="password" name="repwd" />
                 </label>
-                <button>Submit</button>
+                <?php
+                if(isset($_GET["error"])){
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p>Fill in all fields!</p>";
+                    }
+                    if ($_GET["error"] == "invalidemail") {
+                        echo "<p>Invalid Email!</p>";
+                    }
+                    if ($_GET["error"] == "pwdnotmatch") {
+                        echo "<p>Password doesn't match!</p>";
+                    }
+                    if ($_GET["error"] == "emailtaken") {
+                        echo "<p>This email is already registered!</p>";
+                    }
+                    if ($_GET["error"] == "stmtfailed") {
+                        echo "<p>Something went wrong, try agaian!</p>";
+                    }
+                    if ($_GET["error"] == "none") {
+                        echo "<p>You have signed up!</p>";
+                    }
+                }
+                ?>
+                <input type="hidden" name="mobi" value="mobile" />
+                <input type="hidden" name="register" value="reg" />
+                <button type="submit" name="submit">Submit</button>
             </form>
         </div>
         <div class="bottom-text">
             <p>Already have an account??</p>
-            <a href="#">Sign in</a>
+            <a href="login.mobi.php">Sign in</a>
         </div>
     </div>
 </body>
