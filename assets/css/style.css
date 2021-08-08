@@ -608,8 +608,32 @@ textarea {
   .get-started {
     display: none;
   }
+
+  div.f-text a#mobile {
+    display: block;
+  }
+
+  .f-text a#desktop {
+    display: none;
+  }
+
+  div.cta-text button#mobile {
+    display: block;
+  }
+
+  .cta-text button#dekstop {
+    display: none;
+  }
 }
 
 .get-started#mobile {
   display: none;
 }
+
+.f-text a#mobile {
+    display: none;
+}
+
+.cta-text button#mobile {
+    display: none;
+  }

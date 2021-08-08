@@ -70,13 +70,13 @@ With Productive Community of Students." />
             <p>
                 Join the <b>Circle</b> and learn together <br />
                 acording to the subjects you are interested in <br />
-                with productive COmmunity of students.
+                with productive Community of students.
             </p>
             <div class="get-started">
                 <a id="desktop" href="./pages/login.php">Get Started</a>
             </div>
             <div class="get-started" id="mobile">
-                <a id="mobile" href="./pages/login.mobi.php">Get Started</a>
+                <a href="./pages/login.mobi.php">Get Started</a>
             </div>
         </div>
     </div>
@@ -155,7 +155,10 @@ With Productive Community of Students." />
                 subjects that can be easily choose acocording to
                 your interests
             </p>
-            <a href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg" alt="" /></a>
+            <a id="desktop" href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg"
+                    alt="" /></a>
+            <a id="mobile" href="./pages/register.php">Get Started <img src="./assets/img/Features-arrow.svg"
+                    alt="" /></a>
         </div>
     </div>
     <div class="features inverted right">
@@ -168,7 +171,10 @@ With Productive Community of Students." />
                 discuss with you according to the subject you
                 choose
             </p>
-            <a href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg" alt="" /></a>
+            <a id="desktop" href="./pages/login.php">Get Started <img src="./assets/img/Features-arrow.svg"
+                    alt="" /></a>
+            <a id="mobile" href="./pages/register.php">Get Started <img src="./assets/img/Features-arrow.svg"
+                    alt="" /></a>
         </div>
         <img class="vector top" src="./assets/img/Features-3.svg" alt="Vector" />
     </div>
@@ -181,7 +187,8 @@ With Productive Community of Students." />
                     Help us make the best <br />
                     study platform ever
                 </h2>
-                <button>Join Us</button>
+                <button id="desktop" onclick="window.location.href='./pages/login.php'">Join Us</button>
+                <button id="mobile" onclick="window.location.href='./pages/register.php'">Join Us</button>
             </div>
         </div>
     </div>
