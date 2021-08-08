@@ -189,20 +189,22 @@ With Productive Community of Students." />
         <div class="contact-container">
             <img class="vector" src="./assets/img/Contact-Vector.svg" alt="" />
             <div class="contact-form">
+                <form action="https://formspree.io/f/mzbyjwly" method="POST"></form>
                 <h1>Contact Us</h1>
                 <label>
                     Name <br />
-                    <input type="text" name="name" placeholder="Name" />
+                    <input type="text" name="Name" placeholder="Name" />
                 </label>
                 <label>
                     Email <br />
-                    <input type="email" name="email" placeholder="Email" />
+                    <input type="mail" name="Email" placeholder="Email" />
                 </label>
                 <label>
                     Message <br />
-                    <textarea name="message" placeholder="Message..."></textarea>
+                    <textarea name="Message" placeholder="Message..."></textarea>
                 </label>
-                <button class="submit" type="button">Submit</button>
+                <button class="submit" type="submit" value="Submit">Submit</button>
+                </form>
             </div>
         </div>
     </div>
