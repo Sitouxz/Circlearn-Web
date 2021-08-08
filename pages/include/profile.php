@@ -72,6 +72,7 @@
                 echo"<br>";
                 echo"<button>Edit Profile</button>";
                 ?>
+                <!-- Edit Profile dummy -->
             </div>
         </div>
         <div class="bottom">

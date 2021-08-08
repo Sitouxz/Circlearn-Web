@@ -85,6 +85,7 @@ h2 {
   width: 100%;
   font-size: 30px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 label {
@@ -331,3 +332,69 @@ button {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+
+.sign-up {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "h2 h2"
+    "username username"
+    "email email"
+    "gender gender"
+    "birth birth"
+    "password password"
+    "submit submit";
+    justify-content: center;
+}
+.sign-up h2{ grid-area: h2; }
+
+#username { grid-area: username; width: 100%; margin-top: 5px;}
+
+#email { grid-area: email; width: 100%; margin-top: 5px;}
+
+#gender {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "label label"
+    "male female ";
+  grid-area: gender;
+  margin-top: 5px;
+}
+#label{ grid-area: label; }
+#male { grid-area: male; }
+
+#female { grid-area: female; }
+
+#birth { grid-area: birth; width: 100%; margin-top: 5px;}
+
+#password {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "pwd repwd";
+  grid-area: password;
+  margin-top: 5px;
+}
+
+#pwd { 
+  grid-area: pwd; 
+  width: 180px;
+}
+
+#repwd { 
+  grid-area: repwd; 
+  width: 180px;
+}
+
+#submit { grid-area: submit; }
+
+

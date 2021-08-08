@@ -65,36 +65,39 @@
           </div>
         </div>
         <form class="form sign-up" action="../assets/include/signup.inc.php" method="post">
-          <h2>Sign Up</h2>
-            <label>
+          <h2 id="sign-up">Sign Up</h2>
+        <div id="sign-up-form">
+          <label id="username">
               <span>Username</span>
               <input type="text" name="username"/>
             </label>
-          <label>
+          <label id="email">
             <span>Email</span>
             <input type="email" name="email"/>
           </label>
-          <label>
-            <span>Gender</span>
+          <label id="gender">
+            <span id="label">Gender :</span>
             <div class="gender">
-              <input type="radio" name="gender" value="Male"/> Male
-              <input type="radio" name="gender" value="Female"/> Female
+              <input id="male" type="radio" name="gender" value="Male"/> Male
+              <input id="female" type="radio" name="gender" value="Female"/> Female
             </div>
           </label>
-          <label>
+          <label id="birth">
               <span>Date of Birth</span>
               <input type="date" name="dob"/>
             </label>
           <div class="password">
-            <label>
+            <label id="pwd">
               <span>Password</span>
               <input type="password" name="pwd"/>
             </label>
-            <label>
+            <label id="repwd">
               <span>Confirm password</span>
               <input type="password" name="repwd"/>
             </label>
           </div>
+        </div>  
+            
           <?php
                 if(isset($_GET["error"])){
                     if ($_GET["error"] == "emptyinput") {
@@ -117,7 +120,7 @@
                     }
                 }
             ?>
-          <button type="submit" class="submit" name="submit">Sign Up Now</button>
+          <button id="submit" type="submit" class="submit" name="submit">Sign Up Now</button>
         </form>
       </div>
     </div>
