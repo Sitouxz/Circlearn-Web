@@ -30,7 +30,7 @@
             <article>
                 <div class='img-container history-card manage-card'>";
                 if ($room['status'] == 1) {
-                  echo "<img src='../assets/upload/banner".$room['roomId'].".jpg' class='banner2'/>";
+                  echo "<img src='../assets/upload/banner".$room['roomId'].".jpg?".mt_rand()."' class='banner2'/>";
                 }else {
                   echo "<img src='../assets/img/card-banner.png' class='banner2'/>";
                 }
